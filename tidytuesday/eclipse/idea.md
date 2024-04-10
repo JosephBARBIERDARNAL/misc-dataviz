@@ -1,3 +1,0 @@
-
-# solar eclipse data
-
