@@ -1,0 +1,101 @@
+name,year,movie_rated,run_length,genres,release_date,rating,num_raters,num_reviews,review_url
+Schindler's List,1993,R,3h 15min,Biography; Drama; History; ,4 February 1994 (USA),8.9,1173324,1814,https://www.imdb.com/title/tt0108052/reviews/_ajax?ref_=undefined&paginationKey=
+Braveheart,1995,R,2h 58min,Biography; Drama; History; ,24 May 1995 (USA),8.3,936728,1271,https://www.imdb.com/title/tt0112573/reviews/_ajax?ref_=undefined&paginationKey=
+The King's Speech,2010,R,1h 58min,Biography; Drama; History; ,25 December 2010 (USA),8,624817,754,https://www.imdb.com/title/tt1504320/reviews/_ajax?ref_=undefined&paginationKey=
+12 Years a Slave,2013,R,2h 14min,Biography; Drama; History; ,8 November 2013 (USA),8.1,619715,869,https://www.imdb.com/title/tt2024544/reviews/_ajax?ref_=undefined&paginationKey=
+Dunkirk,2017,PG-13,1h 46min,Action; Drama; History; ,21 July 2017 (USA),7.9,523089,2359,https://www.imdb.com/title/tt5013056/reviews/_ajax?ref_=undefined&paginationKey=
+Troy,2004,R,2h 43min,Drama; History; ,14 May 2004 (USA),7.2,476975,1789,https://www.imdb.com/title/tt0332452/reviews/_ajax?ref_=undefined&paginationKey=
+Hacksaw Ridge,2016,R,2h 19min,Biography; Drama; History; ,4 November 2016 (USA),8.1,412911,893,https://www.imdb.com/title/tt2119532/reviews/_ajax?ref_=undefined&paginationKey=
+Amadeus,1984,R,2h 40min,Biography; Drama; History; ,19 September 1984 (USA),8.3,358503,634,https://www.imdb.com/title/tt0086879/reviews/_ajax?ref_=undefined&paginationKey=
+Black Hawk Down,2001,R,2h 24min,Drama; History; War; ,18 January 2002 (USA),7.7,356185,1153,https://www.imdb.com/title/tt0265086/reviews/_ajax?ref_=undefined&paginationKey=
+The Illusionist,2006,PG-13,1h 50min,Drama; Fantasy; History; ,1 September 2006 (USA),7.6,349169,687,https://www.imdb.com/title/tt0443543/reviews/_ajax?ref_=undefined&paginationKey=
+Hotel Rwanda,2004,PG-13,2h 1min,Biography; Drama; History; ,4 February 2005 (USA),8.1,327493,669,https://www.imdb.com/title/tt0395169/reviews/_ajax?ref_=undefined&paginationKey=
+Downfall,2004,R,2h 36min,Biography; Drama; History; ,8 April 2005 (USA),8.2,322655,633,https://www.imdb.com/title/tt0363163/reviews/_ajax?ref_=undefined&paginationKey=
+Pearl Harbor,2001,PG-13,3h 3min,Action; Drama; History; ,25 May 2001 (USA),6.2,305503,2022,https://www.imdb.com/title/tt0213149/reviews/_ajax?ref_=undefined&paginationKey=
+Les Misérables,2012,PG-13,2h 38min,Drama; History; ,25 December 2012 (USA),7.6,300852,968,https://www.imdb.com/title/tt1707386/reviews/_ajax?ref_=undefined&paginationKey=
+Gone with the Wind,1939,Passed,3h 58min,Drama; History; Romance; ,17 January 1940 (USA),8.1,281414,870,https://www.imdb.com/title/tt0031381/reviews/_ajax?ref_=undefined&paginationKey=
+Bridge of Spies,2015,PG-13,2h 22min,Drama; History; Thriller; ,16 October 2015 (USA),7.6,278999,465,https://www.imdb.com/title/tt3682448/reviews/_ajax?ref_=undefined&paginationKey=
+Zero Dark Thirty,2012,R,2h 37min,Drama; History; Thriller; ,11 January 2013 (USA),7.4,264555,709,https://www.imdb.com/title/tt1790885/reviews/_ajax?ref_=undefined&paginationKey=
+Apollo 13,1995,PG,2h 20min,Adventure; Drama; History; ,30 June 1995 (USA),7.6,260497,385,https://www.imdb.com/title/tt0112384/reviews/_ajax?ref_=undefined&paginationKey=
+The Patriot,2000,R,2h 45min,Action; Drama; History; ,28 June 2000 (USA),7.2,249168,1189,https://www.imdb.com/title/tt0187393/reviews/_ajax?ref_=undefined&paginationKey=
+Lincoln,2012,PG-13,2h 30min,Biography; Drama; History; ,16 November 2012 (USA),7.3,239112,794,https://www.imdb.com/title/tt0443272/reviews/_ajax?ref_=undefined&paginationKey=
+Enemy at the Gates,2001,R,2h 11min,Drama; History; War; ,16 March 2001 (USA),7.6,236660,706,https://www.imdb.com/title/tt0215750/reviews/_ajax?ref_=undefined&paginationKey=
+21,2008,PG-13,2h 3min,Crime; Drama; History; ,28 March 2008 (USA),6.8,224589,311,https://www.imdb.com/title/tt0478087/reviews/_ajax?ref_=undefined&paginationKey=
+Valkyrie,2008,PG-13,2h 1min,Drama; History; Thriller; ,25 December 2008 (USA),7.1,223620,468,https://www.imdb.com/title/tt0985699/reviews/_ajax?ref_=undefined&paginationKey=
+The Great Escape,1963,Not Rated,2h 52min,Adventure; Drama; History; ,4 July 1963 (USA),8.2,217996,356,https://www.imdb.com/title/tt0057115/reviews/_ajax?ref_=undefined&paginationKey=
+Gandhi,1982,PG,3h 11min,Biography; Drama; History; ,25 February 1983 (USA),8,214287,298,https://www.imdb.com/title/tt0083987/reviews/_ajax?ref_=undefined&paginationKey=
+Ben-Hur,1959,G,3h 32min,Adventure; Drama; History; ,29 January 1960 (Brazil),8.1,213444,443,https://www.imdb.com/title/tt0052618/reviews/_ajax?ref_=undefined&paginationKey=
+Shakespeare in Love,1998,R,2h 3min,Comedy; Drama; History; ,8 January 1999 (USA),7.1,209979,780,https://www.imdb.com/title/tt0138097/reviews/_ajax?ref_=undefined&paginationKey=
+Munich,2005,R,2h 44min,Action; Drama; History; ,6 January 2006 (USA),7.5,207019,856,https://www.imdb.com/title/tt0408306/reviews/_ajax?ref_=undefined&paginationKey=
+Hidden Figures,2016,PG,2h 7min,Biography; Drama; History; ,6 January 2017 (USA),7.8,191159,500,https://www.imdb.com/title/tt4846340/reviews/_ajax?ref_=undefined&paginationKey=
+The Impossible,2012,PG-13,1h 54min,Drama; History; Thriller; ,4 January 2013 (USA),7.6,190768,423,https://www.imdb.com/title/tt1649419/reviews/_ajax?ref_=undefined&paginationKey=
+Straight Outta Compton,2015,R,2h 27min,Biography; Drama; History; ,14 August 2015 (USA),7.9,174973,385,https://www.imdb.com/title/tt1398426/reviews/_ajax?ref_=undefined&paginationKey=
+Cinderella Man,2005,PG-13,2h 24min,Biography; Drama; History; ,3 June 2005 (USA),8,172730,595,https://www.imdb.com/title/tt0352248/reviews/_ajax?ref_=undefined&paginationKey=
+The Last King of Scotland,2006,R,2h 3min,Biography; Drama; History; ,19 January 2007 (USA),7.7,172012,371,https://www.imdb.com/title/tt0455590/reviews/_ajax?ref_=undefined&paginationKey=
+Hero,2002,PG-13,2h,Action; Adventure; History; ,27 August 2004 (USA),7.9,171351,864,https://www.imdb.com/title/tt0299977/reviews/_ajax?ref_=undefined&paginationKey=
+First Man,2018,PG-13,2h 21min,Biography; Drama; History; ,12 October 2018 (USA),7.3,155735,1305,https://www.imdb.com/title/tt1213641/reviews/_ajax?ref_=undefined&paginationKey=
+Invictus,2009,PG-13,2h 14min,Biography; Drama; History; ,11 December 2009 (USA),7.3,146805,277,https://www.imdb.com/title/tt1057500/reviews/_ajax?ref_=undefined&paginationKey=
+Deepwater Horizon,2016,PG-13,1h 47min,Action; Drama; History; ,30 September 2016 (USA),7.1,145401,281,https://www.imdb.com/title/tt1860357/reviews/_ajax?ref_=undefined&paginationKey=
+Barry Lyndon,1975,PG,3h 5min,Adventure; Drama; History; ,18 December 1975 (USA),8.1,143733,457,https://www.imdb.com/title/tt0072684/reviews/_ajax?ref_=undefined&paginationKey=
+JFK,1991,R,3h 9min,Drama; History; Thriller; ,20 December 1991 (USA),8,137425,485,https://www.imdb.com/title/tt0102138/reviews/_ajax?ref_=undefined&paginationKey=
+Cold Mountain,2003,R,2h 34min,Adventure; Drama; History; ,25 December 2003 (USA),7.2,137401,696,https://www.imdb.com/title/tt0159365/reviews/_ajax?ref_=undefined&paginationKey=
+Defiance,2008,R,2h 17min,Action; Drama; History; ,16 January 2009 (USA),7.2,135323,265,https://www.imdb.com/title/tt1034303/reviews/_ajax?ref_=undefined&paginationKey=
+We Were Soldiers,2002,R,2h 18min,Action; Drama; History; ,1 March 2002 (USA),7.2,127187,770,https://www.imdb.com/title/tt0277434/reviews/_ajax?ref_=undefined&paginationKey=
+The Monuments Men,2014,PG-13,1h 58min,Comedy; Drama; History; ,7 February 2014 (USA),6.1,122173,443,https://www.imdb.com/title/tt2177771/reviews/_ajax?ref_=undefined&paginationKey=
+Glory,1989,R,2h 2min,Biography; Drama; History; ,16 February 1990 (USA),7.8,117966,444,https://www.imdb.com/title/tt0097441/reviews/_ajax?ref_=undefined&paginationKey=
+The 13th Warrior,1999,R,1h 42min,Action; Adventure; History; ,27 August 1999 (USA),6.6,114167,581,https://www.imdb.com/title/tt0120657/reviews/_ajax?ref_=undefined&paginationKey=
+Empire of the Sun,1987,PG,2h 33min,Action; Drama; History; ,25 December 1987 (USA),7.7,112275,342,https://www.imdb.com/title/tt0092965/reviews/_ajax?ref_=undefined&paginationKey=
+Rang De Basanti,2006,Not Rated,2h 47min,Comedy; Drama; History; ,26 January 2006 (USA),8.2,107678,361,https://www.imdb.com/title/tt0405508/reviews/_ajax?ref_=undefined&paginationKey=
+The Way Back,2010,PG-13,2h 13min,Adventure; Drama; History; ,21 January 2011 (USA),7.3,107455,202,https://www.imdb.com/title/tt1023114/reviews/_ajax?ref_=undefined&paginationKey=
+Across the Universe,2007,PG-13,2h 13min,Drama; Fantasy; History; ,12 October 2007 (USA),7.3,104638,549,https://www.imdb.com/title/tt0445922/reviews/_ajax?ref_=undefined&paginationKey=
+The Queen,2006,PG-13,1h 43min,Biography; Drama; History; ,17 November 2006 (USA),7.3,101904,456,https://www.imdb.com/title/tt0436697/reviews/_ajax?ref_=undefined&paginationKey=
+The Other Boleyn Girl,2008,PG-13,1h 55min,Biography; Drama; History; ,29 February 2008 (USA),6.7,101416,272,https://www.imdb.com/title/tt0467200/reviews/_ajax?ref_=undefined&paginationKey=
+Frost_Nixon,2008,R,2h 2min,Biography; Drama; History; ,23 January 2009 (USA),7.7,100750,265,https://www.imdb.com/title/tt0870111/reviews/_ajax?ref_=undefined&paginationKey=
+All the President's Men,1976,PG,2h 18min,Biography; Drama; History; ,9 April 1976 (USA),8,98972,243,https://www.imdb.com/title/tt0074119/reviews/_ajax?ref_=undefined&paginationKey=
+Marie Antoinette,2006,PG-13,2h 3min,Biography; Drama; History; ,20 October 2006 (USA),6.4,97923,666,https://www.imdb.com/title/tt0422720/reviews/_ajax?ref_=undefined&paginationKey=
+The Good Shepherd,2006,R,2h 47min,Drama; History; Thriller; ,22 December 2006 (USA),6.7,96881,509,https://www.imdb.com/title/tt0343737/reviews/_ajax?ref_=undefined&paginationKey=
+United 93,2006,R,1h 51min,Drama; History; Sci-Fi; ,28 April 2006 (USA),7.5,96591,862,https://www.imdb.com/title/tt0475276/reviews/_ajax?ref_=undefined&paginationKey=
+Silence,2016,R,2h 41min,Drama; History; ,13 January 2017 (USA),7.2,96094,431,https://www.imdb.com/title/tt0490215/reviews/_ajax?ref_=undefined&paginationKey=
+"Good Night, and Good Luck.",2005,PG,1h 33min,Biography; Drama; History; ,4 November 2005 (USA),7.4,92714,542,https://www.imdb.com/title/tt0433383/reviews/_ajax?ref_=undefined&paginationKey=
+The Last Emperor,1987,PG-13,2h 43min,Biography; Drama; History; ,15 April 1988 (USA),7.7,91046,170,https://www.imdb.com/title/tt0093389/reviews/_ajax?ref_=undefined&paginationKey=
+Elizabeth,1998,R,2h 4min,Biography; Drama; History; ,19 February 1999 (USA),7.4,90737,431,https://www.imdb.com/title/tt0127536/reviews/_ajax?ref_=undefined&paginationKey=
+Mississippi Burning,1988,R,2h 8min,Crime; Drama; History; ,27 January 1989 (USA),7.8,84598,209,https://www.imdb.com/title/tt0095647/reviews/_ajax?ref_=undefined&paginationKey=
+The Grapes of Wrath,1940,Passed,2h 9min,Drama; History; ,15 March 1940 (USA),8,84223,338,https://www.imdb.com/title/tt0032551/reviews/_ajax?ref_=undefined&paginationKey=
+Selma,2014,PG-13,2h 8min,Biography; Drama; History; ,9 January 2015 (USA),7.5,83285,264,https://www.imdb.com/title/tt1020072/reviews/_ajax?ref_=undefined&paginationKey=
+Malcolm X,1992,PG-13,3h 22min,Biography; Drama; History; ,18 November 1992 (USA),7.7,82521,183,https://www.imdb.com/title/tt0104797/reviews/_ajax?ref_=undefined&paginationKey=
+The New World,2005,PG-13,2h 15min,Biography; Drama; History; ,20 January 2006 (USA),6.7,81466,721,https://www.imdb.com/title/tt0402399/reviews/_ajax?ref_=undefined&paginationKey=
+The Death of Stalin,2017,R,1h 47min,Comedy; Drama; History; ,9 March 2018 (USA),7.2,80253,327,https://www.imdb.com/title/tt4686844/reviews/_ajax?ref_=undefined&paginationKey=
+Centurion,2010,R,1h 37min,Action; Drama; History; ,30 July 2010 (USA),6.4,76569,234,https://www.imdb.com/title/tt1020558/reviews/_ajax?ref_=undefined&paginationKey=
+The Duchess,2008,PG-13,1h 50min,Biography; Drama; History; ,10 October 2008 (USA),6.9,76558,157,https://www.imdb.com/title/tt0864761/reviews/_ajax?ref_=undefined&paginationKey=
+World Trade Center,2006,PG-13,2h 9min,Drama; Fantasy; History; ,9 August 2006 (USA),5.9,76405,580,https://www.imdb.com/title/tt0469641/reviews/_ajax?ref_=undefined&paginationKey=
+The King,2019,R,2h 20min,Biography; Drama; History; ,1 November 2019 (USA),7.2,76205,684,https://www.imdb.com/title/tt7984766/reviews/_ajax?ref_=undefined&paginationKey=
+The Lost City of Z,2016,PG-13,2h 21min,Biography; Drama; History; ,21 April 2017 (USA),6.6,75131,251,https://www.imdb.com/title/tt1212428/reviews/_ajax?ref_=undefined&paginationKey=
+Jackie,2016,R,1h 40min,Biography; Drama; History; ,2 December 2016 (USA),6.7,70888,320,https://www.imdb.com/title/tt1619029/reviews/_ajax?ref_=undefined&paginationKey=
+The Water Diviner,2014,R,1h 51min,Drama; History; War; ,17 April 2015 (India),7,69915,223,https://www.imdb.com/title/tt3007512/reviews/_ajax?ref_=undefined&paginationKey=
+Amistad,1997,R,2h 35min,Biography; Drama; History; ,25 December 1997 (USA),7.3,69328,240,https://www.imdb.com/title/tt0118607/reviews/_ajax?ref_=undefined&paginationKey=
+The White Ribbon,2009,R,2h 24min,Drama; History; Mystery; ,5 March 2010 (USA),7.8,66893,212,https://www.imdb.com/title/tt1149362/reviews/_ajax?ref_=undefined&paginationKey=
+Elizabeth: The Golden Age,2007,PG-13,1h 54min,Biography; Drama; History; ,12 October 2007 (USA),6.8,65530,237,https://www.imdb.com/title/tt0414055/reviews/_ajax?ref_=undefined&paginationKey=
+Seabiscuit,2003,PG-13,2h 20min,Drama; History; Sport; ,25 July 2003 (USA),7.3,65166,468,https://www.imdb.com/title/tt0329575/reviews/_ajax?ref_=undefined&paginationKey=
+Child 44,2015,R,2h 17min,Crime; Drama; History; ,9 May 2016 (India),6.5,63768,267,https://www.imdb.com/title/tt1014763/reviews/_ajax?ref_=undefined&paginationKey=
+12 Strong,2018,R,2h 10min,Action; Drama; History; ,19 January 2018 (USA),6.6,63442,371,https://www.imdb.com/title/tt1413492/reviews/_ajax?ref_=undefined&paginationKey=
+Quiz Show,1994,PG-13,2h 13min,Biography; Drama; History; ,7 October 1994 (USA),7.5,63232,177,https://www.imdb.com/title/tt0110932/reviews/_ajax?ref_=undefined&paginationKey=
+The Finest Hours,2016,PG-13,1h 57min,Action; Drama; History; ,29 January 2016 (USA),6.8,59961,199,https://www.imdb.com/title/tt2025690/reviews/_ajax?ref_=undefined&paginationKey=
+K-19: The Widowmaker,2002,PG-13,2h 18min,Drama; History; Thriller; ,19 July 2002 (USA),6.7,58258,291,https://www.imdb.com/title/tt0267626/reviews/_ajax?ref_=undefined&paginationKey=
+The Young Victoria,2009,PG,1h 45min,Biography; Drama; History; ,8 January 2010 (USA),7.3,56451,108,https://www.imdb.com/title/tt0962736/reviews/_ajax?ref_=undefined&paginationKey=
+Conquest 1453,2012,Not Rated,2h 42min,Action; Drama; History; ,25 April 2012 (USA),6.7,56021,154,https://www.imdb.com/title/tt1783232/reviews/_ajax?ref_=undefined&paginationKey=
+The Mission,1986,PG,2h 5min,Adventure; Drama; History; ,31 October 1986 (USA),7.4,54283,214,https://www.imdb.com/title/tt0091530/reviews/_ajax?ref_=undefined&paginationKey=
+Thirteen Days,2000,PG-13,2h 25min,Drama; History; Thriller; ,12 January 2001 (USA),7.3,52807,337,https://www.imdb.com/title/tt0146309/reviews/_ajax?ref_=undefined&paginationKey=
+Woman in Gold,2015,PG-13,1h 49min,Biography; Drama; History; ,10 April 2015 (USA),7.3,52175,191,https://www.imdb.com/title/tt2404425/reviews/_ajax?ref_=undefined&paginationKey=
+Macbeth,2015,R,1h 53min,Drama; History; War; ,11 December 2015 (USA),6.6,51643,219,https://www.imdb.com/title/tt2884018/reviews/_ajax?ref_=undefined&paginationKey=
+Battleship Potemkin,1925,Not Rated,1h 6min,Drama; History; Thriller; ,24 December 1925 (Soviet Union),8,51403,208,https://www.imdb.com/title/tt0015648/reviews/_ajax?ref_=undefined&paginationKey=
+Airlift,2016,Not Rated,2h 10min,Drama; History; ,22 January 2016 (USA),8,51394,208,https://www.imdb.com/title/tt4387040/reviews/_ajax?ref_=undefined&paginationKey=
+The Longest Day,1962,G,2h 58min,Action; Drama; History; ,4 October 1962 (USA),7.8,51178,234,https://www.imdb.com/title/tt0056197/reviews/_ajax?ref_=undefined&paginationKey=
+Midway,2019,PG-13,2h 18min,Action; Drama; History; ,8 November 2019 (USA),6.7,50395,854,https://www.imdb.com/title/tt6924650/reviews/_ajax?ref_=undefined&paginationKey=
+A Bridge Too Far,1977,PG,2h 55min,Drama; History; War; ,15 June 1977 (USA),7.4,50195,248,https://www.imdb.com/title/tt0075784/reviews/_ajax?ref_=undefined&paginationKey=
+The Killing Fields,1984,R,2h 21min,Biography; Drama; History; ,1 February 1985 (USA),7.8,50036,206,https://www.imdb.com/title/tt0087553/reviews/_ajax?ref_=undefined&paginationKey=
+The Flowers of War,2011,R,2h 26min,Drama; History; Romance; ,16 December 2011 (China),7.6,48360,162,https://www.imdb.com/title/tt1410063/reviews/_ajax?ref_=undefined&paginationKey=
+Hotel Mumbai,2018,R,2h 3min,Action; Drama; History; ,29 March 2019 (USA),7.6,47726,393,https://www.imdb.com/title/tt5461944/reviews/_ajax?ref_=undefined&paginationKey=
+Miracle,2004,PG,2h 15min,Biography; Drama; History; ,6 February 2004 (USA),7.5,46453,315,https://www.imdb.com/title/tt0349825/reviews/_ajax?ref_=undefined&paginationKey=
+Detroit,2017,R,2h 23min,Crime; Drama; History; ,4 August 2017 (USA),7.3,45804,202,https://www.imdb.com/title/tt5390504/reviews/_ajax?ref_=undefined&paginationKey=
+The Passion of Joan of Arc,1928,Passed,1h 54min,Biography; Drama; History; ,25 October 1928 (France),8.1,45200,192,https://www.imdb.com/title/tt0019254/reviews/_ajax?ref_=undefined&paginationKey=
+Cold War,2018,R,1h 29min,Drama; History; Music; ,8 June 2018 (Poland),7.6,44833,195,https://www.imdb.com/title/tt6543652/reviews/_ajax?ref_=undefined&paginationKey=

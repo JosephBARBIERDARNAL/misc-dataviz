@@ -1,0 +1,101 @@
+name,year,movie_rated,run_length,genres,release_date,rating,num_raters,num_reviews,review_url
+Forrest Gump,1994,PG-13,2h 22min,Romance; ,6 July 1994 (USA),8.8,1741481,2355,https://www.imdb.com/title/tt0109830/reviews/_ajax?ref_=undefined&paginationKey=
+Titanic,1997,PG-13,3h 14min,Romance; ,19 December 1997 (USA),7.8,1017379,2864,https://www.imdb.com/title/tt0120338/reviews/_ajax?ref_=undefined&paginationKey=
+Eternal Sunshine of the Spotless Mind,2004,R,1h 48min,Romance; ,19 March 2004 (USA),8.3,882688,1800,https://www.imdb.com/title/tt0338013/reviews/_ajax?ref_=undefined&paginationKey=
+Good Will Hunting,1997,R,2h 6min,Romance; ,9 January 1998 (USA),8.3,830366,887,https://www.imdb.com/title/tt0119217/reviews/_ajax?ref_=undefined&paginationKey=
+Slumdog Millionaire,2008,R,2h,Romance; ,25 December 2008 (USA),8,782771,1126,https://www.imdb.com/title/tt1010048/reviews/_ajax?ref_=undefined&paginationKey=
+Amélie,2001,R,2h 2min,Comedy; Romance; ,8 February 2002 (USA),8.3,686825,1481,https://www.imdb.com/title/tt0211915/reviews/_ajax?ref_=undefined&paginationKey=
+Silver Linings Playbook,2012,R,2h 2min,Comedy; Romance; ,25 December 2012 (USA),7.7,648078,836,https://www.imdb.com/title/tt1045658/reviews/_ajax?ref_=undefined&paginationKey=
+Life Is Beautiful,1997,PG-13,1h 56min,Comedy; Romance; ,12 February 1999 (USA),8.6,600633,1318,https://www.imdb.com/title/tt0118799/reviews/_ajax?ref_=undefined&paginationKey=
+The Curious Case of Benjamin Button,2008,PG-13,2h 46min,Romance; ,25 December 2008 (USA),7.8,572320,948,https://www.imdb.com/title/tt0421715/reviews/_ajax?ref_=undefined&paginationKey=
+Groundhog Day,1993,PG,1h 41min,Comedy; Romance; ,12 February 1993 (USA),8,566305,769,https://www.imdb.com/title/tt0107048/reviews/_ajax?ref_=undefined&paginationKey=
+Her,2013,R,2h 6min,Romance; ,10 January 2014 (USA),8,518426,1060,https://www.imdb.com/title/tt1798709/reviews/_ajax?ref_=undefined&paginationKey=
+Cast Away,2000,PG-13,2h 23min,Romance; ,22 December 2000 (USA),7.8,506482,1179,https://www.imdb.com/title/tt0162222/reviews/_ajax?ref_=undefined&paginationKey=
+Casablanca,1942,PG,1h 42min,Romance; ,23 January 1943 (USA),8.5,506322,1292,https://www.imdb.com/title/tt0034583/reviews/_ajax?ref_=undefined&paginationKey=
+The Notebook,2004,PG-13,2h 3min,Romance; ,25 June 2004 (USA),7.8,503964,1255,https://www.imdb.com/title/tt0332280/reviews/_ajax?ref_=undefined&paginationKey=
+The Great Gatsby,2013,PG-13,2h 23min,Romance; ,10 May 2013 (USA),7.2,462941,902,https://www.imdb.com/title/tt1343092/reviews/_ajax?ref_=undefined&paginationKey=
+500 Days of Summer,2009,PG-13,1h 35min,Comedy; Romance; ,7 August 2009 (USA),7.7,461834,601,https://www.imdb.com/title/tt1022603/reviews/_ajax?ref_=undefined&paginationKey=
+"Crazy, Stupid, Love",2011,PG-13,1h 58min,Comedy; Romance; ,29 July 2011 (USA),7.4,460023,370,https://www.imdb.com/title/tt1570728/reviews/_ajax?ref_=undefined&paginationKey=
+The Perks of Being a Wallflower,2012,PG-13,1h 43min,Romance; ,12 October 2012 (USA),8,448222,618,https://www.imdb.com/title/tt1659337/reviews/_ajax?ref_=undefined&paginationKey=
+Edward Scissorhands,1990,PG-13,1h 45min,Romance; ,14 December 1990 (USA),7.9,434955,656,https://www.imdb.com/title/tt0099487/reviews/_ajax?ref_=undefined&paginationKey=
+Love Actually,2003,R,2h 15min,Comedy; Romance; ,14 November 2003 (USA),7.6,413896,1136,https://www.imdb.com/title/tt0314331/reviews/_ajax?ref_=undefined&paginationKey=
+Twilight,2008,PG-13,2h 2min,Romance; ,21 November 2008 (USA),5.2,413326,1654,https://www.imdb.com/title/tt1099212/reviews/_ajax?ref_=undefined&paginationKey=
+The Terminal,2004,PG-13,2h 8min,Comedy; Romance; ,18 June 2004 (USA),7.4,393039,702,https://www.imdb.com/title/tt0362227/reviews/_ajax?ref_=undefined&paginationKey=
+The Theory of Everything,2014,PG-13,2h 3min,Romance; ,26 November 2014 (USA),7.7,387452,501,https://www.imdb.com/title/tt2980516/reviews/_ajax?ref_=undefined&paginationKey=
+The 40-Year-Old Virgin,2005,R,1h 56min,Comedy; Romance; ,19 August 2005 (USA),7.1,384072,587,https://www.imdb.com/title/tt0405422/reviews/_ajax?ref_=undefined&paginationKey=
+Midnight in Paris,2011,PG-13,1h 34min,Comedy; Romance; ,10 June 2011 (USA),7.7,376680,609,https://www.imdb.com/title/tt1605783/reviews/_ajax?ref_=undefined&paginationKey=
+Vertigo,1958,PG,2h 8min,Romance; ,22 May 1958 (UK),8.3,348647,848,https://www.imdb.com/title/tt0052357/reviews/_ajax?ref_=undefined&paginationKey=
+Easy A,2010,PG-13,1h 32min,Comedy; Romance; ,17 September 2010 (USA),7,348230,339,https://www.imdb.com/title/tt1282140/reviews/_ajax?ref_=undefined&paginationKey=
+Knocked Up,2007,R,2h 9min,Comedy; Romance; ,1 June 2007 (USA),6.9,343791,584,https://www.imdb.com/title/tt0478311/reviews/_ajax?ref_=undefined&paginationKey=
+Passengers,2016,PG-13,1h 56min,Romance; ,21 December 2016 (USA),7,337271,1173,https://www.imdb.com/title/tt1355644/reviews/_ajax?ref_=undefined&paginationKey=
+The Fault in Our Stars,2014,PG-13,2h 6min,Romance; ,6 June 2014 (USA),7.7,334274,679,https://www.imdb.com/title/tt2582846/reviews/_ajax?ref_=undefined&paginationKey=
+Friends with Benefits,2011,R,1h 49min,Comedy; Romance; ,22 July 2011 (USA),6.5,332366,238,https://www.imdb.com/title/tt1632708/reviews/_ajax?ref_=undefined&paginationKey=
+Yes Man,2008,PG-13,1h 44min,Comedy; Romance; ,19 December 2008 (USA),6.8,327950,302,https://www.imdb.com/title/tt1068680/reviews/_ajax?ref_=undefined&paginationKey=
+Wedding Crashers,2005,R,1h 59min,Comedy; Romance; ,15 July 2005 (USA),6.9,326314,667,https://www.imdb.com/title/tt0396269/reviews/_ajax?ref_=undefined&paginationKey=
+50 First Dates,2004,PG-13,1h 39min,Comedy; Romance; ,13 February 2004 (USA),6.8,318838,505,https://www.imdb.com/title/tt0343660/reviews/_ajax?ref_=undefined&paginationKey=
+Brokeback Mountain,2005,R,2h 14min,Romance; ,13 January 2006 (USA),7.7,315187,2337,https://www.imdb.com/title/tt0388795/reviews/_ajax?ref_=undefined&paginationKey=
+A Star Is Born,2018,R,2h 16min,Romance; ,5 October 2018 (USA),7.7,313248,2667,https://www.imdb.com/title/tt1517451/reviews/_ajax?ref_=undefined&paginationKey=
+Up in the Air,2009,R,1h 49min,Comedy; Romance; ,23 December 2009 (USA),7.4,312919,522,https://www.imdb.com/title/tt1193138/reviews/_ajax?ref_=undefined&paginationKey=
+50_50,2011,R,1h 40min,Comedy; Romance; ,30 September 2011 (USA),7.6,310708,428,https://www.imdb.com/title/tt1306980/reviews/_ajax?ref_=undefined&paginationKey=
+Moonrise Kingdom,2012,PG-13,1h 34min,Comedy; Romance; ,29 June 2012 (USA),7.8,309368,438,https://www.imdb.com/title/tt1748122/reviews/_ajax?ref_=undefined&paginationKey=
+Meet the Parents,2000,PG-13,1h 48min,Comedy; Romance; ,6 October 2000 (USA),7,304804,517,https://www.imdb.com/title/tt0212338/reviews/_ajax?ref_=undefined&paginationKey=
+Fifty Shades of Grey,2015,R,2h 5min,Romance; ,13 February 2015 (USA),4.1,291846,1543,https://www.imdb.com/title/tt2322441/reviews/_ajax?ref_=undefined&paginationKey=
+Hitch,2005,PG-13,1h 58min,Comedy; Romance; ,11 February 2005 (USA),6.6,290474,410,https://www.imdb.com/title/tt0386588/reviews/_ajax?ref_=undefined&paginationKey=
+10 Things I Hate About You,1999,PG-13,1h 37min,Comedy; Romance; ,31 March 1999 (USA),7.3,287665,616,https://www.imdb.com/title/tt0147800/reviews/_ajax?ref_=undefined&paginationKey=
+The Proposal,2009,PG-13,1h 48min,Comedy; Romance; ,19 June 2009 (USA),6.7,287564,330,https://www.imdb.com/title/tt1041829/reviews/_ajax?ref_=undefined&paginationKey=
+There's Something About Mary,1998,R,1h 59min,Comedy; Romance; ,15 July 1998 (USA),7.1,284962,649,https://www.imdb.com/title/tt0129387/reviews/_ajax?ref_=undefined&paginationKey=
+Gone with the Wind,1939,Passed,3h 58min,Romance; ,17 January 1940 (USA),8.1,281474,870,https://www.imdb.com/title/tt0031381/reviews/_ajax?ref_=undefined&paginationKey=
+Pretty Woman,1990,R,1h 59min,Comedy; Romance; ,23 March 1990 (USA),7,279357,334,https://www.imdb.com/title/tt0100405/reviews/_ajax?ref_=undefined&paginationKey=
+Pitch Perfect,2012,PG-13,1h 52min,Comedy; Romance; ,5 October 2012 (USA),7.2,269450,316,https://www.imdb.com/title/tt1981677/reviews/_ajax?ref_=undefined&paginationKey=
+As Good as It Gets,1997,PG-13,2h 19min,Comedy; Romance; ,25 December 1997 (USA),7.7,268396,539,https://www.imdb.com/title/tt0119822/reviews/_ajax?ref_=undefined&paginationKey=
+Notting Hill,1999,PG-13,2h 4min,Comedy; Romance; ,28 May 1999 (USA),7.1,263330,669,https://www.imdb.com/title/tt0125439/reviews/_ajax?ref_=undefined&paginationKey=
+Moulin Rouge!,2001,PG-13,2h 7min,Romance; ,1 June 2001 (USA),7.6,261663,2352,https://www.imdb.com/title/tt0203009/reviews/_ajax?ref_=undefined&paginationKey=
+Bridesmaids,2011,R,2h 5min,Comedy; Romance; ,13 May 2011 (USA),6.8,261604,563,https://www.imdb.com/title/tt1478338/reviews/_ajax?ref_=undefined&paginationKey=
+Before Sunrise,1995,R,1h 41min,Romance; ,27 January 1995 (USA),8.1,259505,491,https://www.imdb.com/title/tt0112471/reviews/_ajax?ref_=undefined&paginationKey=
+Forgetting Sarah Marshall,2008,R,1h 51min,Comedy; Romance; ,18 April 2008 (USA),7.1,257218,367,https://www.imdb.com/title/tt0800039/reviews/_ajax?ref_=undefined&paginationKey=
+The Graduate,1967,PG,1h 46min,Comedy; Romance; ,21 December 1967 (USA),8,248509,747,https://www.imdb.com/title/tt0061722/reviews/_ajax?ref_=undefined&paginationKey=
+Meet the Fockers,2004,PG-13,1h 55min,Comedy; Romance; ,22 December 2004 (USA),6.3,247839,440,https://www.imdb.com/title/tt0290002/reviews/_ajax?ref_=undefined&paginationKey=
+Annie Hall,1977,PG,1h 33min,Comedy; Romance; ,20 April 1977 (USA),8,247004,534,https://www.imdb.com/title/tt0075686/reviews/_ajax?ref_=undefined&paginationKey=
+Pride & Prejudice,2005,PG,2h 9min,Romance; ,23 November 2005 (USA),7.8,244775,1158,https://www.imdb.com/title/tt0414387/reviews/_ajax?ref_=undefined&paginationKey=
+Vanilla Sky,2001,R,2h 16min,Romance; ,14 December 2001 (USA),6.9,243067,1294,https://www.imdb.com/title/tt0259711/reviews/_ajax?ref_=undefined&paginationKey=
+Atonement,2007,R,2h 3min,Romance; ,11 January 2008 (USA),7.8,241646,650,https://www.imdb.com/title/tt0783233/reviews/_ajax?ref_=undefined&paginationKey=
+The Adjustment Bureau,2011,PG-13,1h 46min,Romance; ,4 March 2011 (USA),7,238519,473,https://www.imdb.com/title/tt1385826/reviews/_ajax?ref_=undefined&paginationKey=
+Vicky Cristina Barcelona,2008,PG-13,1h 36min,Comedy; Romance; ,15 August 2008 (USA),7.1,237781,398,https://www.imdb.com/title/tt0497465/reviews/_ajax?ref_=undefined&paginationKey=
+Some Like It Hot,1959,Not Rated,2h 1min,Comedy; Romance; ,19 March 1959 (USA),8.2,236307,416,https://www.imdb.com/title/tt0053291/reviews/_ajax?ref_=undefined&paginationKey=
+Jerry Maguire,1996,R,2h 19min,Comedy; Romance; ,13 December 1996 (USA),7.3,235416,366,https://www.imdb.com/title/tt0116695/reviews/_ajax?ref_=undefined&paginationKey=
+The Holiday,2006,PG-13,2h 16min,Comedy; Romance; ,8 December 2006 (USA),6.9,235047,560,https://www.imdb.com/title/tt0457939/reviews/_ajax?ref_=undefined&paginationKey=
+Grease,1978,PG,1h 50min,Romance; ,16 June 1978 (USA),7.2,230215,415,https://www.imdb.com/title/tt0077631/reviews/_ajax?ref_=undefined&paginationKey=
+The Reader,2008,R,2h 4min,Romance; ,30 January 2009 (USA),7.6,226284,431,https://www.imdb.com/title/tt0976051/reviews/_ajax?ref_=undefined&paginationKey=
+Before Sunset,2004,R,1h 20min,Romance; ,30 July 2004 (USA),8,226255,542,https://www.imdb.com/title/tt0381681/reviews/_ajax?ref_=undefined&paginationKey=
+The Artist,2011,PG-13,1h 40min,Comedy; Romance; ,20 January 2012 (USA),7.9,226187,661,https://www.imdb.com/title/tt1655442/reviews/_ajax?ref_=undefined&paginationKey=
+Don Jon,2013,R,1h 30min,Comedy; Romance; ,27 September 2013 (USA),6.5,224896,338,https://www.imdb.com/title/tt2229499/reviews/_ajax?ref_=undefined&paginationKey=
+The Fountain,2006,PG-13,1h 37min,Romance; ,22 November 2006 (USA),7.2,224185,985,https://www.imdb.com/title/tt0414993/reviews/_ajax?ref_=undefined&paginationKey=
+Marriage Story,2019,R,2h 17min,Comedy; Romance; ,6 December 2019 (USA),8,219894,1178,https://www.imdb.com/title/tt7653254/reviews/_ajax?ref_=undefined&paginationKey=
+Bridget Jones's Diary,2001,R,1h 37min,Comedy; Romance; ,13 April 2001 (USA),6.7,218715,588,https://www.imdb.com/title/tt0243155/reviews/_ajax?ref_=undefined&paginationKey=
+The Beach,2000,R,1h 59min,Romance; ,11 February 2000 (USA),6.7,218197,587,https://www.imdb.com/title/tt0163978/reviews/_ajax?ref_=undefined&paginationKey=
+Warm Bodies,2013,PG-13,1h 38min,Comedy; Romance; ,1 February 2013 (USA),6.9,215679,378,https://www.imdb.com/title/tt1588173/reviews/_ajax?ref_=undefined&paginationKey=
+Just Go with It,2011,PG-13,1h 57min,Comedy; Romance; ,11 February 2011 (USA),6.4,215475,271,https://www.imdb.com/title/tt1564367/reviews/_ajax?ref_=undefined&paginationKey=
+Singin' in the Rain,1952,G,1h 43min,Comedy; Romance; ,11 April 1952 (USA),8.3,211370,664,https://www.imdb.com/title/tt0045152/reviews/_ajax?ref_=undefined&paginationKey=
+Mr. Nobody,2009,R,2h 21min,Romance; ,26 September 2013 (USA),7.8,210352,393,https://www.imdb.com/title/tt0485947/reviews/_ajax?ref_=undefined&paginationKey=
+Meet Joe Black,1998,PG-13,2h 58min,Romance; ,13 November 1998 (USA),7.2,208791,799,https://www.imdb.com/title/tt0119643/reviews/_ajax?ref_=undefined&paginationKey=
+Mamma Mia!,2008,PG-13,1h 48min,Comedy; Romance; ,18 July 2008 (USA),6.4,208596,752,https://www.imdb.com/title/tt0795421/reviews/_ajax?ref_=undefined&paginationKey=
+No Strings Attached,2011,R,1h 48min,Comedy; Romance; ,21 January 2011 (USA),6.2,208289,214,https://www.imdb.com/title/tt1411238/reviews/_ajax?ref_=undefined&paginationKey=
+The Lobster,2015,R,1h 59min,Comedy; Romance; ,16 October 2015 (Ireland),7.2,207454,646,https://www.imdb.com/title/tt3464902/reviews/_ajax?ref_=undefined&paginationKey=
+Romeo + Juliet,1996,PG-13,2h,Romance; ,1 November 1996 (USA),6.7,205296,576,https://www.imdb.com/title/tt0117509/reviews/_ajax?ref_=undefined&paginationKey=
+Garden State,2004,R,1h 42min,Comedy; Romance; ,20 August 2004 (USA),7.4,204812,973,https://www.imdb.com/title/tt0333766/reviews/_ajax?ref_=undefined&paginationKey=
+How to Lose a Guy in 10 Days,2003,PG-13,1h 56min,Comedy; Romance; ,7 February 2003 (USA),6.4,203365,383,https://www.imdb.com/title/tt0251127/reviews/_ajax?ref_=undefined&paginationKey=
+Match Point,2005,R,2h 4min,Romance; ,20 January 2006 (USA),7.6,201777,786,https://www.imdb.com/title/tt0416320/reviews/_ajax?ref_=undefined&paginationKey=
+True Romance,1993,R,1h 59min,Romance; ,10 September 1993 (USA),7.9,200842,537,https://www.imdb.com/title/tt0108399/reviews/_ajax?ref_=undefined&paginationKey=
+The Ugly Truth,2009,R,1h 36min,Comedy; Romance; ,24 July 2009 (USA),6.4,199488,195,https://www.imdb.com/title/tt1142988/reviews/_ajax?ref_=undefined&paginationKey=
+Closer,2004,R,1h 44min,Romance; ,3 December 2004 (USA),7.2,198838,952,https://www.imdb.com/title/tt0376541/reviews/_ajax?ref_=undefined&paginationKey=
+The Girl Next Door,2004,R,1h 49min,Comedy; Romance; ,9 April 2004 (USA),6.7,197489,540,https://www.imdb.com/title/tt0265208/reviews/_ajax?ref_=undefined&paginationKey=
+Me Before You,2016,PG-13,1h 46min,Romance; ,3 June 2016 (USA),7.4,197474,457,https://www.imdb.com/title/tt2674426/reviews/_ajax?ref_=undefined&paginationKey=
+P.S. I Love You,2007,PG-13,2h 6min,Comedy; Romance; ,21 December 2007 (USA),7,197346,276,https://www.imdb.com/title/tt0431308/reviews/_ajax?ref_=undefined&paginationKey=
+Call Me by Your Name,2017,R,2h 12min,Romance; ,19 January 2018 (USA),7.9,195583,951,https://www.imdb.com/title/tt5726616/reviews/_ajax?ref_=undefined&paginationKey=
+A Walk to Remember,2002,PG,1h 41min,Romance; ,25 January 2002 (USA),7.4,195515,1010,https://www.imdb.com/title/tt0281358/reviews/_ajax?ref_=undefined&paginationKey=
+Dirty Dancing,1987,PG-13,1h 40min,Romance; ,21 August 1987 (USA),7,194838,462,https://www.imdb.com/title/tt0092890/reviews/_ajax?ref_=undefined&paginationKey=
+"I Love You, Man",2009,R,1h 45min,Comedy; Romance; ,20 March 2009 (USA),7,191014,234,https://www.imdb.com/title/tt1155056/reviews/_ajax?ref_=undefined&paginationKey=
+Ghost,1990,PG-13,2h 7min,Romance; ,13 July 1990 (USA),7,190746,301,https://www.imdb.com/title/tt0099653/reviews/_ajax?ref_=undefined&paginationKey=
+Revolutionary Road,2008,R,1h 59min,Romance; ,23 January 2009 (USA),7.3,190069,486,https://www.imdb.com/title/tt0959337/reviews/_ajax?ref_=undefined&paginationKey=
+When Harry Met Sally...,1989,R,1h 35min,Comedy; Romance; ,21 July 1989 (USA),7.6,189079,326,https://www.imdb.com/title/tt0098635/reviews/_ajax?ref_=undefined&paginationKey=
+Bad Teacher,2011,R,1h 32min,Comedy; Romance; ,24 June 2011 (USA),5.6,189027,325,https://www.imdb.com/title/tt1284575/reviews/_ajax?ref_=undefined&paginationKey=

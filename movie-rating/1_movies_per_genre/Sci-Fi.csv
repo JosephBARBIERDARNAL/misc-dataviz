@@ -1,0 +1,101 @@
+name,year,movie_rated,run_length,genres,release_date,rating,num_raters,num_reviews,review_url
+Inception,2010,PG-13,2h 28min,Action; Adventure; Sci-Fi; ,16 July 2010 (USA),8.8,1981688,3820,https://www.imdb.com/title/tt1375666/reviews/_ajax?ref_=undefined&paginationKey=
+The Matrix,1999,R,2h 16min,Action; Sci-Fi; ,31 March 1999 (USA),8.7,1619772,4281,https://www.imdb.com/title/tt0133093/reviews/_ajax?ref_=undefined&paginationKey=
+Interstellar,2014,PG-13,2h 49min,Adventure; Drama; Sci-Fi; ,7 November 2014 (USA),8.6,1430810,3977,https://www.imdb.com/title/tt0816692/reviews/_ajax?ref_=undefined&paginationKey=
+The Avengers,2012,PG-13,2h 23min,Action; Adventure; Sci-Fi; ,4 May 2012 (USA),8,1236053,1929,https://www.imdb.com/title/tt0848228/reviews/_ajax?ref_=undefined&paginationKey=
+The Prestige,2006,PG-13,2h 10min,Drama; Mystery; Sci-Fi; ,20 October 2006 (USA),8.5,1144521,1394,https://www.imdb.com/title/tt0482571/reviews/_ajax?ref_=undefined&paginationKey=
+Back to the Future,1985,PG,1h 56min,Adventure; Comedy; Sci-Fi; ,3 July 1985 (USA),8.5,1015026,1176,https://www.imdb.com/title/tt0088763/reviews/_ajax?ref_=undefined&paginationKey=
+V for Vendetta,2005,R,2h 12min,Action; Drama; Sci-Fi; ,17 March 2006 (USA),8.2,1002950,2205,https://www.imdb.com/title/tt0434409/reviews/_ajax?ref_=undefined&paginationKey=
+Terminator 2: Judgment Day,1991,R,2h 17min,Action; Sci-Fi; ,3 July 1991 (USA),8.5,968511,1269,https://www.imdb.com/title/tt0103064/reviews/_ajax?ref_=undefined&paginationKey=
+Iron Man,2008,PG-13,2h 6min,Action; Adventure; Sci-Fi; ,2 May 2008 (USA),7.9,915644,1319,https://www.imdb.com/title/tt0371746/reviews/_ajax?ref_=undefined&paginationKey=
+The Truman Show,1998,PG,1h 43min,Comedy; Drama; Sci-Fi; ,5 June 1998 (USA),8.1,901077,1151,https://www.imdb.com/title/tt0120382/reviews/_ajax?ref_=undefined&paginationKey=
+Eternal Sunshine of the Spotless Mind,2004,R,1h 48min,Drama; Romance; Sci-Fi; ,19 March 2004 (USA),8.3,882500,1800,https://www.imdb.com/title/tt0338013/reviews/_ajax?ref_=undefined&paginationKey=
+Mad Max: Fury Road,2015,R,2h,Action; Adventure; Sci-Fi; ,15 May 2015 (USA),8.1,848014,1990,https://www.imdb.com/title/tt1392190/reviews/_ajax?ref_=undefined&paginationKey=
+Star Wars: Episode VII - The Force Awakens,2015,PG-13,2h 18min,Action; Adventure; Sci-Fi; ,18 December 2015 (USA),7.9,841239,4794,https://www.imdb.com/title/tt2488496/reviews/_ajax?ref_=undefined&paginationKey=
+Jurassic Park,1993,PG-13,2h 7min,Action; Adventure; Sci-Fi; ,11 June 1993 (USA),8.1,836798,1133,https://www.imdb.com/title/tt0107290/reviews/_ajax?ref_=undefined&paginationKey=
+The Hunger Games,2012,PG-13,2h 22min,Action; Adventure; Sci-Fi; ,23 March 2012 (USA),7.2,826508,2037,https://www.imdb.com/title/tt1392170/reviews/_ajax?ref_=undefined&paginationKey=
+Avengers: Infinity War,2018,PG-13,2h 29min,Action; Adventure; Sci-Fi; ,27 April 2018 (USA),8.4,784785,4248,https://www.imdb.com/title/tt4154756/reviews/_ajax?ref_=undefined&paginationKey=
+The Terminator,1984,R,1h 47min,Action; Sci-Fi; ,26 October 1984 (USA),8,779037,885,https://www.imdb.com/title/tt0088247/reviews/_ajax?ref_=undefined&paginationKey=
+Alien,1979,R,1h 57min,Horror; Sci-Fi; ,22 June 1979 (USA),8.4,762796,1423,https://www.imdb.com/title/tt0078748/reviews/_ajax?ref_=undefined&paginationKey=
+Gravity,2013,PG-13,1h 31min,Drama; Sci-Fi; Thriller; ,4 October 2013 (USA),7.7,751308,2090,https://www.imdb.com/title/tt1454468/reviews/_ajax?ref_=undefined&paginationKey=
+Iron Man 3,2013,PG-13,2h 10min,Action; Adventure; Sci-Fi; ,3 May 2013 (USA),7.2,735571,1314,https://www.imdb.com/title/tt1300854/reviews/_ajax?ref_=undefined&paginationKey=
+A Clockwork Orange,1971,R,2h 16min,Crime; Drama; Sci-Fi; ,2 February 1972 (USA),8.3,735084,1553,https://www.imdb.com/title/tt0066921/reviews/_ajax?ref_=undefined&paginationKey=
+The Martian,2015,PG-13,2h 24min,Adventure; Drama; Sci-Fi; ,2 October 2015 (USA),8,734927,1312,https://www.imdb.com/title/tt3659388/reviews/_ajax?ref_=undefined&paginationKey=
+Donnie Darko,2001,R,1h 53min,Drama; Mystery; Sci-Fi; ,30 January 2002 (France),8,724912,2276,https://www.imdb.com/title/tt0246578/reviews/_ajax?ref_=undefined&paginationKey=
+Captain America: The First Avenger,2011,PG-13,2h 4min,Action; Adventure; Sci-Fi; ,22 July 2011 (USA),6.9,718921,882,https://www.imdb.com/title/tt0458339/reviews/_ajax?ref_=undefined&paginationKey=
+Avengers: Age of Ultron,2015,PG-13,2h 21min,Action; Adventure; Sci-Fi; ,1 May 2015 (USA),7.3,717523,1303,https://www.imdb.com/title/tt2395427/reviews/_ajax?ref_=undefined&paginationKey=
+Captain America: The Winter Soldier,2014,PG-13,2h 16min,Action; Adventure; Sci-Fi; ,4 April 2014 (USA),7.7,714448,937,https://www.imdb.com/title/tt1843866/reviews/_ajax?ref_=undefined&paginationKey=
+Iron Man 2,2010,PG-13,2h 4min,Action; Adventure; Sci-Fi; ,7 May 2010 (USA),7,701924,881,https://www.imdb.com/title/tt1228705/reviews/_ajax?ref_=undefined&paginationKey=
+Man of Steel,2013,PG-13,2h 23min,Action; Adventure; Sci-Fi; ,14 June 2013 (USA),7,675231,2747,https://www.imdb.com/title/tt0770828/reviews/_ajax?ref_=undefined&paginationKey=
+Blade Runner,1982,R,1h 57min,Action; Sci-Fi; Thriller; ,25 June 1982 (USA),8.1,673129,1541,https://www.imdb.com/title/tt0083658/reviews/_ajax?ref_=undefined&paginationKey=
+Spider-Man,2002,PG-13,2h 1min,Action; Adventure; Sci-Fi; ,3 May 2002 (USA),7.3,671754,2124,https://www.imdb.com/title/tt0145487/reviews/_ajax?ref_=undefined&paginationKey=
+X-Men: Days of Future Past,2014,PG-13,2h 12min,Action; Adventure; Sci-Fi; ,23 May 2014 (USA),8,647272,821,https://www.imdb.com/title/tt1877832/reviews/_ajax?ref_=undefined&paginationKey=
+Captain America: Civil War,2016,PG-13,2h 27min,Action; Adventure; Sci-Fi; ,6 May 2016 (USA),7.8,638736,1410,https://www.imdb.com/title/tt3498820/reviews/_ajax?ref_=undefined&paginationKey=
+Aliens,1986,R,2h 17min,Action; Adventure; Sci-Fi; ,18 July 1986 (USA),8.3,635166,1280,https://www.imdb.com/title/tt0090605/reviews/_ajax?ref_=undefined&paginationKey=
+X-Men: First Class,2011,PG-13,2h 11min,Action; Adventure; Sci-Fi; ,3 June 2011 (USA),7.7,634152,767,https://www.imdb.com/title/tt1270798/reviews/_ajax?ref_=undefined&paginationKey=
+District 9,2009,R,1h 52min,Action; Sci-Fi; Thriller; ,14 August 2009 (USA),7.9,627698,1375,https://www.imdb.com/title/tt1136608/reviews/_ajax?ref_=undefined&paginationKey=
+Logan,2017,R,2h 17min,Action; Drama; Sci-Fi; ,3 March 2017 (USA),8.1,621181,1559,https://www.imdb.com/title/tt3315342/reviews/_ajax?ref_=undefined&paginationKey=
+Batman v Superman: Dawn of Justice,2016,PG-13,2h 31min,Action; Adventure; Sci-Fi; ,25 March 2016 (USA),6.4,608230,3696,https://www.imdb.com/title/tt2975590/reviews/_ajax?ref_=undefined&paginationKey=
+Black Panther,2018,PG-13,2h 14min,Action; Adventure; Sci-Fi; ,16 February 2018 (USA),7.3,587394,3190,https://www.imdb.com/title/tt1825683/reviews/_ajax?ref_=undefined&paginationKey=
+Transformers,2007,PG-13,2h 24min,Action; Adventure; Sci-Fi; ,3 July 2007 (USA),7,586898,1869,https://www.imdb.com/title/tt0418279/reviews/_ajax?ref_=undefined&paginationKey=
+2001: A Space Odyssey,1968,G,2h 29min,Adventure; Sci-Fi; ,12 May 1968 (UK),8.3,582726,2143,https://www.imdb.com/title/tt0062622/reviews/_ajax?ref_=undefined&paginationKey=
+Edge of Tomorrow,2014,PG-13,1h 53min,Action; Adventure; Sci-Fi; ,6 June 2014 (USA),7.9,581945,967,https://www.imdb.com/title/tt1631867/reviews/_ajax?ref_=undefined&paginationKey=
+Star Trek,2009,PG-13,2h 7min,Action; Adventure; Sci-Fi; ,8 May 2009 (USA),7.9,570082,1650,https://www.imdb.com/title/tt0796366/reviews/_ajax?ref_=undefined&paginationKey=
+Arrival,2016,PG-13,1h 56min,Drama; Mystery; Sci-Fi; ,11 November 2016 (USA),7.9,569765,1861,https://www.imdb.com/title/tt2543164/reviews/_ajax?ref_=undefined&paginationKey=
+Jurassic World,2015,PG-13,2h 4min,Action; Adventure; Sci-Fi; ,12 June 2015 (USA),7,566277,1531,https://www.imdb.com/title/tt0369610/reviews/_ajax?ref_=undefined&paginationKey=
+12 Monkeys,1995,R,2h 9min,Mystery; Sci-Fi; Thriller; ,5 January 1996 (USA),8,565403,641,https://www.imdb.com/title/tt0114746/reviews/_ajax?ref_=undefined&paginationKey=
+X-Men,2000,PG-13,1h 44min,Action; Adventure; Sci-Fi; ,14 July 2000 (USA),7.4,559248,1447,https://www.imdb.com/title/tt0120903/reviews/_ajax?ref_=undefined&paginationKey=
+Prometheus,2012,R,2h 4min,Adventure; Mystery; Sci-Fi; ,8 June 2012 (USA),7,557990,2543,https://www.imdb.com/title/tt1446714/reviews/_ajax?ref_=undefined&paginationKey=
+The Amazing Spider-Man,2012,PG-13,2h 16min,Action; Adventure; Sci-Fi; ,3 July 2012 (USA),6.9,547661,1342,https://www.imdb.com/title/tt0948470/reviews/_ajax?ref_=undefined&paginationKey=
+Rogue One: A Star Wars Story,2016,PG-13,2h 13min,Action; Adventure; Sci-Fi; ,16 December 2016 (USA),7.8,534491,1763,https://www.imdb.com/title/tt3748528/reviews/_ajax?ref_=undefined&paginationKey=
+Spider-Man 2,2004,PG-13,2h 7min,Action; Adventure; Sci-Fi; ,30 June 2004 (USA),7.3,529345,1450,https://www.imdb.com/title/tt0316654/reviews/_ajax?ref_=undefined&paginationKey=
+Looper,2012,R,1h 53min,Action; Drama; Sci-Fi; ,28 September 2012 (USA),7.4,523456,761,https://www.imdb.com/title/tt1276104/reviews/_ajax?ref_=undefined&paginationKey=
+Her,2013,R,2h 6min,Drama; Romance; Sci-Fi; ,10 January 2014 (USA),8,518285,1060,https://www.imdb.com/title/tt1798709/reviews/_ajax?ref_=undefined&paginationKey=
+Independence Day,1996,PG-13,2h 25min,Action; Adventure; Sci-Fi; ,3 July 1996 (USA),7,516794,939,https://www.imdb.com/title/tt0116629/reviews/_ajax?ref_=undefined&paginationKey=
+Limitless,2011,PG-13,1h 45min,Sci-Fi; Thriller; ,18 March 2011 (USA),7.4,516619,485,https://www.imdb.com/title/tt1219289/reviews/_ajax?ref_=undefined&paginationKey=
+The Matrix Reloaded,2003,R,2h 18min,Action; Sci-Fi; ,15 May 2003 (USA),7.2,503185,2781,https://www.imdb.com/title/tt0234215/reviews/_ajax?ref_=undefined&paginationKey=
+X2: X-Men United,2003,PG-13,2h 14min,Action; Sci-Fi; Thriller; ,2 May 2003 (USA),7.4,501727,1105,https://www.imdb.com/title/tt0290334/reviews/_ajax?ref_=undefined&paginationKey=
+Spider-Man: Homecoming,2017,PG-13,2h 13min,Action; Adventure; Sci-Fi; ,7 July 2017 (USA),7.4,488800,1356,https://www.imdb.com/title/tt2250912/reviews/_ajax?ref_=undefined&paginationKey=
+Rise of the Planet of the Apes,2011,PG-13,1h 45min,Action; Drama; Sci-Fi; ,5 August 2011 (USA),7.6,488751,706,https://www.imdb.com/title/tt1318514/reviews/_ajax?ref_=undefined&paginationKey=
+"I, Robot",2004,PG-13,1h 55min,Action; Drama; Sci-Fi; ,16 July 2004 (USA),7.1,488325,839,https://www.imdb.com/title/tt0343818/reviews/_ajax?ref_=undefined&paginationKey=
+Spider-Man 3,2007,PG-13,2h 19min,Action; Adventure; Sci-Fi; ,4 May 2007 (USA),6.2,486585,2061,https://www.imdb.com/title/tt0413300/reviews/_ajax?ref_=undefined&paginationKey=
+Oblivion,2013,PG-13,2h 4min,Action; Adventure; Sci-Fi; ,19 April 2013 (USA),7,474456,1006,https://www.imdb.com/title/tt1483013/reviews/_ajax?ref_=undefined&paginationKey=
+X-Men: The Last Stand,2006,PG-13,1h 44min,Action; Adventure; Sci-Fi; ,26 May 2006 (USA),6.7,473265,1955,https://www.imdb.com/title/tt0376994/reviews/_ajax?ref_=undefined&paginationKey=
+Back to the Future Part II,1989,PG,1h 48min,Adventure; Comedy; Sci-Fi; ,22 November 1989 (USA),7.8,462381,412,https://www.imdb.com/title/tt0096874/reviews/_ajax?ref_=undefined&paginationKey=
+Ex Machina,2014,R,1h 48min,Drama; Mystery; Sci-Fi; ,24 April 2015 (USA),7.7,458187,884,https://www.imdb.com/title/tt0470752/reviews/_ajax?ref_=undefined&paginationKey=
+Pacific Rim,2013,PG-13,2h 11min,Action; Adventure; Sci-Fi; ,12 July 2013 (USA),6.9,458119,1240,https://www.imdb.com/title/tt1663662/reviews/_ajax?ref_=undefined&paginationKey=
+X-Men Origins: Wolverine,2009,PG-13,1h 47min,Action; Adventure; Sci-Fi; ,1 May 2009 (USA),6.6,457518,712,https://www.imdb.com/title/tt0458525/reviews/_ajax?ref_=undefined&paginationKey=
+Star Trek Into Darkness,2013,PG-13,2h 12min,Action; Adventure; Sci-Fi; ,16 May 2013 (USA),7.7,457107,1243,https://www.imdb.com/title/tt1408101/reviews/_ajax?ref_=undefined&paginationKey=
+Children of Men,2006,R,1h 49min,Drama; Sci-Fi; Thriller; ,5 January 2007 (USA),7.9,452558,1342,https://www.imdb.com/title/tt0206634/reviews/_ajax?ref_=undefined&paginationKey=
+The Butterfly Effect,2004,R,1h 53min,Drama; Sci-Fi; Thriller; ,23 January 2004 (USA),7.6,441951,1180,https://www.imdb.com/title/tt0289879/reviews/_ajax?ref_=undefined&paginationKey=
+The Matrix Revolutions,2003,R,2h 9min,Action; Sci-Fi; ,5 November 2003 (USA),6.8,437028,2126,https://www.imdb.com/title/tt0242653/reviews/_ajax?ref_=undefined&paginationKey=
+Lucy,2014,R,1h 29min,Action; Sci-Fi; Thriller; ,25 July 2014 (USA),6.4,430676,1137,https://www.imdb.com/title/tt2872732/reviews/_ajax?ref_=undefined&paginationKey=
+The Incredible Hulk,2008,PG-13,1h 52min,Action; Adventure; Sci-Fi; ,13 June 2008 (USA),6.7,423889,797,https://www.imdb.com/title/tt0800080/reviews/_ajax?ref_=undefined&paginationKey=
+The Fifth Element,1997,PG-13,2h 6min,Action; Adventure; Sci-Fi; ,9 May 1997 (USA),7.7,423434,852,https://www.imdb.com/title/tt0119116/reviews/_ajax?ref_=undefined&paginationKey=
+The Wolverine,2013,PG-13,2h 6min,Action; Adventure; Sci-Fi; ,26 July 2013 (USA),6.7,420261,607,https://www.imdb.com/title/tt1430132/reviews/_ajax?ref_=undefined&paginationKey=
+Captain Marvel,2019,PG-13,2h 3min,Action; Adventure; Sci-Fi; ,8 March 2019 (USA),6.9,417001,7184,https://www.imdb.com/title/tt4154664/reviews/_ajax?ref_=undefined&paginationKey=
+Elysium,2013,R,1h 49min,Action; Drama; Sci-Fi; ,9 August 2013 (USA),6.6,411958,915,https://www.imdb.com/title/tt1535108/reviews/_ajax?ref_=undefined&paginationKey=
+The Amazing Spider-Man 2,2014,PG-13,2h 22min,Action; Adventure; Sci-Fi; ,2 May 2014 (USA),6.6,407309,1181,https://www.imdb.com/title/tt1872181/reviews/_ajax?ref_=undefined&paginationKey=
+War of the Worlds,2005,PG-13,1h 56min,Adventure; Sci-Fi; Thriller; ,29 June 2005 (USA),6.5,406710,2838,https://www.imdb.com/title/tt0407304/reviews/_ajax?ref_=undefined&paginationKey=
+The Maze Runner,2014,PG-13,1h 53min,Action; Mystery; Sci-Fi; ,19 September 2014 (USA),6.8,406551,612,https://www.imdb.com/title/tt1790864/reviews/_ajax?ref_=undefined&paginationKey=
+The Day After Tomorrow,2004,PG-13,2h 4min,Action; Adventure; Sci-Fi; ,28 May 2004 (USA),6.4,406360,1223,https://www.imdb.com/title/tt0319262/reviews/_ajax?ref_=undefined&paginationKey=
+The Hunger Games: Mockingjay - Part 1,2014,PG-13,2h 3min,Action; Adventure; Sci-Fi; ,21 November 2014 (USA),6.6,401820,611,https://www.imdb.com/title/tt1951265/reviews/_ajax?ref_=undefined&paginationKey=
+Back to the Future Part III,1990,PG,1h 58min,Adventure; Comedy; Sci-Fi; ,25 May 1990 (USA),7.4,389699,335,https://www.imdb.com/title/tt0099088/reviews/_ajax?ref_=undefined&paginationKey=
+Armageddon,1998,PG-13,2h 31min,Action; Adventure; Sci-Fi; ,1 July 1998 (USA),6.7,387963,1224,https://www.imdb.com/title/tt0120591/reviews/_ajax?ref_=undefined&paginationKey=
+A Quiet Place,2018,PG-13,1h 30min,Drama; Horror; Sci-Fi; ,6 April 2018 (USA),7.5,385789,2882,https://www.imdb.com/title/tt6644200/reviews/_ajax?ref_=undefined&paginationKey=
+X-Men: Apocalypse,2016,PG-13,2h 24min,Action; Adventure; Sci-Fi; ,27 May 2016 (USA),6.9,381865,830,https://www.imdb.com/title/tt3385516/reviews/_ajax?ref_=undefined&paginationKey=
+Transformers: Dark of the Moon,2011,PG-13,2h 34min,Action; Adventure; Sci-Fi; ,29 June 2011 (USA),6.2,378545,939,https://www.imdb.com/title/tt1399103/reviews/_ajax?ref_=undefined&paginationKey=
+Unbreakable,2000,PG-13,1h 46min,Drama; Mystery; Sci-Fi; ,22 November 2000 (USA),7.3,377965,1496,https://www.imdb.com/title/tt0217869/reviews/_ajax?ref_=undefined&paginationKey=
+Transformers: Revenge of the Fallen,2009,PG-13,2h 29min,Action; Adventure; Sci-Fi; ,24 June 2009 (USA),6,377753,1494,https://www.imdb.com/title/tt1055369/reviews/_ajax?ref_=undefined&paginationKey=
+Terminator 3: Rise of the Machines,2003,R,1h 49min,Action; Sci-Fi; ,2 July 2003 (USA),6.3,369941,1719,https://www.imdb.com/title/tt0181852/reviews/_ajax?ref_=undefined&paginationKey=
+Godzilla,2014,PG-13,2h 3min,Action; Adventure; Sci-Fi; ,16 May 2014 (USA),6.4,368278,1634,https://www.imdb.com/title/tt0831387/reviews/_ajax?ref_=undefined&paginationKey=
+The Lost World: Jurassic Park,1997,PG-13,2h 9min,Action; Adventure; Sci-Fi; ,23 May 1997 (USA),6.6,367727,653,https://www.imdb.com/title/tt0119567/reviews/_ajax?ref_=undefined&paginationKey=
+28 Days Later...,2002,R,1h 53min,Drama; Horror; Sci-Fi; ,27 June 2003 (USA),7.6,367391,1513,https://www.imdb.com/title/tt0289043/reviews/_ajax?ref_=undefined&paginationKey=
+Predator,1987,R,1h 47min,Action; Adventure; Sci-Fi; ,12 June 1987 (USA),7.8,362463,783,https://www.imdb.com/title/tt0093773/reviews/_ajax?ref_=undefined&paginationKey=
+In Time,2011,PG-13,1h 49min,Action; Sci-Fi; Thriller; ,28 October 2011 (USA),6.7,361536,533,https://www.imdb.com/title/tt1637688/reviews/_ajax?ref_=undefined&paginationKey=
+E.T. the Extra-Terrestrial,1982,PG,1h 55min,Sci-Fi; ,11 June 1982 (USA),7.8,359808,610,https://www.imdb.com/title/tt0083866/reviews/_ajax?ref_=undefined&paginationKey=
+The Thing,1982,R,1h 49min,Horror; Mystery; Sci-Fi; ,25 June 1982 (USA),8.1,356790,1095,https://www.imdb.com/title/tt0084787/reviews/_ajax?ref_=undefined&paginationKey=
+Ready Player One,2018,PG-13,2h 20min,Action; Adventure; Sci-Fi; ,29 March 2018 (USA),7.5,348661,1988,https://www.imdb.com/title/tt1677720/reviews/_ajax?ref_=undefined&paginationKey=
+2012,2009,PG-13,2h 38min,Action; Adventure; Sci-Fi; ,13 November 2009 (USA),5.8,345451,1174,https://www.imdb.com/title/tt1190080/reviews/_ajax?ref_=undefined&paginationKey=
+Face_Off,1997,R,2h 18min,Action; Crime; Sci-Fi; ,27 June 1997 (USA),7.3,341453,609,https://www.imdb.com/title/tt0119094/reviews/_ajax?ref_=undefined&paginationKey=
+Terminator Salvation,2009,PG-13,1h 55min,Action; Adventure; Sci-Fi; ,21 May 2009 (USA),6.5,337484,1083,https://www.imdb.com/title/tt0438488/reviews/_ajax?ref_=undefined&paginationKey=
