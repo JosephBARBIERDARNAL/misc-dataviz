@@ -3,4 +3,4 @@ data: https://www.kaggle.com/datasets/keneticenergy/economic-data-life-after-cov
 
 output:
 
-![image](unemployment_linecharts.png)
+![image](unemployment_linecharts.png) 
