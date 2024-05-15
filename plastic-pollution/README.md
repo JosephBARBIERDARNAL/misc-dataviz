@@ -1,3 +1,3 @@
 <br>
 
-![](global-plastics-production.gif)
+![](global-plastics-production-modif.gif)
