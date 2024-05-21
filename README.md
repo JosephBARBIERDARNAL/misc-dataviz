@@ -1,4 +1,4 @@
-# Small-Projects
+# miscellaneous dataviz
 
 Here are some small projects that I have worked on, mainly on data visualization.
 
