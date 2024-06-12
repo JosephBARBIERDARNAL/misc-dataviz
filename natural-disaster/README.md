@@ -1,0 +1,3 @@
+<br>
+
+![](natural-disasters.png)
