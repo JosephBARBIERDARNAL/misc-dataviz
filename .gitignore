@@ -1,5 +1,6 @@
 ipynb_checkpoints/
 __pycache__/
+cache/
 venv/
 apikey.py
 .DS_Store

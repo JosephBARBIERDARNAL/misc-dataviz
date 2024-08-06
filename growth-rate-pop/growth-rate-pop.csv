@@ -1,0 +1,802 @@
+City,Country,Continent,Population (2024),Population (2023),Growth Rate
+Tokyo,Japan,Asia,37115035,37194105,-0.0021
+Delhi,India,Asia,33807403,32941309,0.0263
+Shanghai,China,Asia,29867918,29210808,0.0225
+Dhaka,Bangladesh,Asia,23935652,23209616,0.0313
+Sao Paulo,Brazil,South America,22806704,22619736,0.0083
+Cairo,Egypt,Africa,22623874,22183201,0.0199
+Mexico City,Mexico,North America,22505315,22281442,0.01
+Beijing,China,Asia,22189082,21766214,0.0194
+Mumbai,India,Asia,21673149,21296517,0.0177
+Osaka,Japan,Asia,18967459,19013434,-0.0024
+Chongqing,China,Asia,17773923,17340704,0.025
+Karachi,Pakistan,Asia,17648555,17236230,0.0239
+Kinshasa,DR Congo,Africa,17032322,16315534,0.0439
+Lagos,Nigeria,Africa,16536018,15945912,0.037
+Istanbul,Turkey,Asia,16047350,15847768,0.0126
+Buenos Aires,Argentina,South America,15618288,15490415,0.0083
+Kolkata,India,Asia,15570786,15332793,0.0155
+Manila,Philippines,Asia,14941953,14667089,0.0187
+Guangzhou,China,Asia,14590096,14284353,0.0214
+Tianjin,China,Asia,14470873,14238643,0.0163
+Lahore,Pakistan,Asia,14407074,13979390,0.0306
+Bangalore,India,Asia,14008262,13607800,0.0294
+Rio De Janeiro,Brazil,South America,13824347,13727720,0.007
+Shenzhen,China,Asia,13311855,13072633,0.0183
+Moscow,Russia,Asia,12712305,12680389,0.0025
+Chennai,India,Asia,12053697,11776147,0.0236
+Bogota,Colombia,South America,11658211,11507960,0.0131
+Jakarta,Indonesia,Asia,11436004,11248839,0.0166
+Lima,Peru,South America,11361938,11204382,0.0141
+Paris,France,Europe,11276701,11208440,0.0061
+Bangkok,Thailand,Asia,11233869,11069982,0.0148
+Hyderabad,India,Asia,11068877,10801163,0.0248
+Seoul,South Korea,Asia,10004840,9988049,0.0017
+Nanjing,China,Asia,9947548,9698464,0.0257
+Chengdu,China,Asia,9828110,9653772,0.0181
+London,United Kingdom,Asia,9748033,9648110,0.0104
+Luanda,Angola,Africa,9651032,9292336,0.0386
+Tehran,Iran,Asia,9616007,9499781,0.0122
+Ho Chi Minh City,Vietnam,Asia,9567656,9320866,0.0265
+Nagoya,Japan,Asia,9556879,9569328,-0.0013
+Xi An Shaanxi,China,Asia,9013837,8785174,0.026
+Ahmedabad,India,Asia,8854444,8650605,0.0236
+Wuhan,China,Asia,8850850,8718250,0.0152
+Kuala Lumpur,Malaysia,Asia,8815630,8621724,0.0225
+Hangzhou,China,Asia,8419842,8237206,0.0222
+Suzhou,China,Asia,8350625,8074031,0.0343
+Surat,India,Asia,8330528,8064949,0.0329
+Dar Es Salaam,Tanzania,Africa,8161231,7775865,0.0496
+New York,United States,North America,7931147,8133522,-0.0249
+Baghdad,Iraq,Asia,7921134,7711305,0.0272
+Shenyang,China,Asia,7830377,7680967,0.0195
+Riyadh,Saudi Arabia,Asia,7820551,7682430,0.018
+Hong Kong,Hong Kong,Asia,7725859,7684801,0.0053
+Foshan,China,Asia,7704935,7597386,0.0142
+Dongguan,China,Asia,7675146,7587049,0.0116
+Pune,India,Asia,7345848,7166374,0.025
+Santiago,Chile,South America,6950952,6903392,0.0069
+Haerbin,China,Asia,6938008,6803811,0.0197
+Madrid,Spain,Europe,6783241,6751374,0.0047
+Khartoum,Sudan,Africa,6542070,6344348,0.0312
+Toronto,Canada,North America,6431430,6371958,0.0093
+Johannesburg,South Africa,Africa,6324351,6198016,0.0204
+Belo Horizonte,Brazil,South America,6300409,6247889,0.0084
+Dalian,China,Asia,6217487,6077995,0.023
+Singapore,Singapore,Asia,6119203,6080859,0.0063
+Qingdao,China,Asia,6104597,5986525,0.0197
+Zhengzhou,China,Asia,6014887,5859272,0.0266
+Ji Nan Shandong,China,Asia,5940698,5806031,0.0232
+Abidjan,Ivory Coast,Africa,5866704,5686350,0.0317
+Barcelona,Spain,Europe,5711917,5687356,0.0043
+Yangon,Myanmar,Asia,5709678,5610241,0.0177
+Addis Ababa,Ethiopia,Africa,5703628,5460591,0.0445
+Alexandria,Egypt,Africa,5696131,5588477,0.0193
+Saint Petersburg,Russia,Asia,5581707,5561294,0.0037
+Nairobi,Kenya,Africa,5541172,5325160,0.0406
+Chittagong,Bangladesh,Asia,5513609,5379660,0.0249
+Guadalajara,Mexico,North America,5499678,5419880,0.0147
+Fukuoka,Japan,Asia,5478076,5490271,-0.0022
+Ankara,Turkey,Asia,5477087,5397098,0.0148
+Hanoi,Vietnam,Asia,5431801,5253385,0.034
+Melbourne,Australia,Oceana,5315600,5235407,0.0153
+Monterrey,Mexico,North America,5195355,5116647,0.0154
+Sydney,Australia,Oceana,5184896,5120894,0.0125
+Changsha,China,Asia,5027975,4921487,0.0216
+Urumqi,China,Asia,5005964,4865038,0.029
+Cape Town,South Africa,Africa,4977833,4890280,0.0179
+Jiddah,Saudi Arabia,Asia,4943210,4862941,0.0165
+Brasilia,Brazil,South America,4935274,4873048,0.0128
+Kunming,China,Asia,4861079,4761284,0.021
+Changchun,China,Asia,4802447,4710382,0.0195
+Kabul,Afghanistan,Asia,4728384,4588666,0.0304
+Hefei,China,Asia,4727290,4615758,0.0242
+Yaounde,Cameroon,Africa,4681768,4509287,0.0383
+Ningbo,China,Asia,4659830,4537901,0.0269
+Shantou,China,Asia,4656525,4573713,0.0181
+New Taipei,Taiwan,Asia,4534877,4504147,0.0068
+Tel Aviv,Israel,Asia,4495727,4420855,0.0169
+Kano,Nigeria,Africa,4490734,4348481,0.0327
+Shijiazhuang,China,Asia,4454132,4370473,0.0191
+Montreal,Canada,North America,4341638,4307958,0.0078
+Rome,Italy,Europe,4331974,4315671,0.0038
+Jaipur,India,Asia,4308510,4207084,0.0241
+Recife,Brazil,South America,4305127,4263940,0.0097
+Nanning,China,Asia,4291463,4191890,0.0238
+Fortaleza,Brazil,South America,4246399,4206240,0.0095
+Kozhikode,India,Asia,4243962,4088555,0.038
+Porto Alegre,Brazil,South America,4239867,4211933,0.0066
+Taiyuan Shanxi,China,Asia,4226782,4145010,0.0197
+Douala,Cameroon,Africa,4203108,4063200,0.0344
+Ekurhuleni,South Africa,Africa,4190832,4118327,0.0176
+Malappuram,India,Asia,4184921,4009087,0.0439
+Medellin,Colombia,South America,4137386,4102308,0.0086
+Changzhou,China,Asia,4085502,3981658,0.0261
+Kampala,Uganda,Africa,4050826,3846102,0.0532
+Antananarivo,Madagascar,Africa,4048666,3872264,0.0456
+Lucknow,India,Asia,4038214,3945409,0.0235
+Abuja,Nigeria,Africa,4025735,3839646,0.0485
+Nanchang,China,Asia,4016037,3920379,0.0244
+Wenzhou,China,Asia,4009531,3919724,0.0229
+Xiamen,China,Asia,4007468,3935484,0.0183
+Ibadan,Nigeria,Africa,4004316,3874908,0.0334
+Fuzhou Fujian,China,Asia,3998754,3922202,0.0195
+Salvador,Brazil,South America,3994982,3958384,0.0092
+Casablanca,Morocco,Africa,3950408,3892837,0.0148
+Tangshan Hebei,China,Asia,3925206,3814702,0.029
+Kumasi,Ghana,Africa,3903481,3768239,0.0359
+Curitiba,Brazil,South America,3852459,3813082,0.0103
+Bekasi,Indonesia,Asia,3830678,3729351,0.0272
+Faisalabad,Pakistan,Asia,3800193,3710845,0.0241
+Los Angeles,United States,North America,3748640,3785439,-0.0097
+Guiyang,China,Asia,3661446,3580904,0.0225
+Port Harcourt,Nigeria,Africa,3636547,3480101,0.045
+Thrissur,India,Asia,3605238,3482456,0.0353
+Santo Domingo,Dominican Republic,,3587402,3523890,0.018
+Berlin,Germany,Europe,3576873,3573938,0.0008
+Asuncion,Paraguay,South America,3568830,3510511,0.0166
+Dakar,Senegal,Africa,3540462,3429536,0.0323
+Kochi,India,Asia,3507053,3406055,0.0297
+Wuxi,China,Asia,3498740,3437346,0.0179
+Busan,South Korea,Asia,3477419,3471949,0.0016
+Campinas,Brazil,South America,3458441,3422796,0.0104
+Mashhad,Iran,Asia,3415532,3367852,0.0142
+Sanaa,Yemen,Asia,3407814,3292497,0.035
+Puebla,Mexico,North America,3394342,3344761,0.0148
+Indore,India,Asia,3393380,3302077,0.0277
+Lanzhou,China,Asia,3365910,3297528,0.0207
+Ouagadougou,Burkina Faso,,3358934,3203923,0.0484
+Kuwait City,Kuwait,Asia,3353602,3297759,0.0169
+Lusaka,Zambia,Africa,3324219,3181250,0.0449
+Kanpur,India,Asia,3286142,3234160,0.0161
+Durban,South Africa,Africa,3262128,3228003,0.0106
+Guayaquil,Ecuador,South America,3193267,3142466,0.0162
+Pyongyang,North Korea,Asia,3183135,3157538,0.0081
+Milan,Italy,Europe,3160631,3154570,0.0019
+Guatemala City,Guatemala,North America,3159631,3095099,0.0208
+Athens,Greece,Europe,3154591,3154463,0.0
+Depok,Indonesia,Asia,3133298,3041229,0.0303
+Izmir,Turkey,Asia,3120340,3088414,0.0103
+Nagpur,India,Asia,3106340,3046687,0.0196
+Surabaya,Indonesia,Asia,3088748,3044413,0.0146
+Handan,China,Asia,3085998,3005409,0.0268
+Coimbatore,India,Asia,3083721,3009047,0.0248
+Huaian,China,Asia,3071048,2979893,0.0306
+Port Au Prince,Haiti,North America,3060169,2987455,0.0243
+Zhongshan,China,Asia,3051065,3010685,0.0134
+Dubai,United Arab Emirates,Asia,3051016,3007583,0.0144
+Bamako,Mali,Africa,3050570,2929373,0.0414
+Mbuji Mayi,DR Congo,Africa,3022855,2891746,0.0453
+Kiev,Ukraine,Europe,3020228,3016789,0.0011
+Lisbon,Portugal,Europe,3014607,3000536,0.0047
+Weifang,China,Asia,2994537,2917819,0.0263
+Caracas,Venezuela,South America,2991727,2972145,0.0066
+Thiruvananthapuram,India,Asia,2984154,2891119,0.0322
+Algiers,Algeria,Africa,2952115,2901810,0.0173
+Shizuoka,Japan,Asia,2935527,2937359,-0.0006
+Lubumbashi,DR Congo,Africa,2933962,2811959,0.0434
+Cali,Colombia,South America,2890433,2863730,0.0093
+Goiania,Brazil,South America,2890418,2848473,0.0147
+Pretoria,South Africa,Africa,2889899,2818100,0.0255
+Shaoxing,China,Asia,2882171,2805654,0.0273
+Incheon,South Korea,Asia,2861686,2848557,0.0046
+Yantai,China,Asia,2834508,2764584,0.0253
+Zibo,China,Asia,2828435,2780142,0.0174
+Huizhou,China,Asia,2827610,2758593,0.025
+Manchester,United Kingdom,,2811756,2791005,0.0074
+Taipei,Taiwan,Asia,2766334,2754196,0.0044
+Mogadishu,Somalia,Africa,2726815,2610483,0.0446
+Brazzaville,Republic of the Congo,,2724566,2637733,0.0329
+Accra,Ghana,Africa,2721165,2660072,0.023
+Bandung,Indonesia,Asia,2714215,2674000,0.015
+Damascus,Syria,Asia,2685361,2584771,0.0389
+Birmingham,United Kingdom,Europe,2684807,2665100,0.0074
+Vancouver,Canada,North America,2682509,2657088,0.0096
+Toluca De Lerdo,Mexico,North America,2674336,2626368,0.0183
+Luoyang,China,Asia,2666744,2602793,0.0246
+Sapporo,Japan,Asia,2660947,2666112,-0.0019
+Tashkent,Uzbekistan,Asia,2633661,2603243,0.0117
+Patna,India,Asia,2633243,2579762,0.0207
+Bhopal,India,Asia,2624865,2564502,0.0235
+Chicago,United States,North America,2590002,2627520,-0.0143
+Tangerang,Indonesia,Asia,2570980,2514077,0.0226
+Nantong,China,Asia,2555722,2492230,0.0255
+Brisbane,Australia,Oceania,2536449,2504505,0.0128
+Tunis,Tunisia,Africa,2510673,2475446,0.0142
+Peshawar,Pakistan,Asia,2480546,2411785,0.0285
+Medan,Indonesia,Asia,2479070,2439054,0.0164
+Gujranwala,Pakistan,Asia,2479058,2415416,0.0263
+Baku,Azerbaijan,Asia,2464162,2432304,0.0131
+Hohhot,China,Asia,2443686,2380636,0.0265
+San Juan,Puerto Rico,North America,2436620,2439564,-0.0012
+Belem,Brazil,South America,2432177,2409409,0.0094
+Rawalpindi,Pakistan,Asia,2430388,2377325,0.0223
+Agra,India,Asia,2422342,2367554,0.0231
+Manaus,Brazil,South America,2406854,2375636,0.0131
+Kannur,India,Asia,2405664,2346137,0.0254
+Beirut,Lebanon,Asia,2402485,2421354,-0.0078
+Maracaibo,Venezuela,South America,2400826,2367626,0.014
+Liuzhou,China,Asia,2397410,2343452,0.023
+Visakhapatnam,India,Asia,2385110,2330928,0.0232
+Baotou,China,Asia,2381242,2334878,0.0199
+Vadodara,India,Asia,2373365,2324084,0.0212
+Barranquilla,Colombia,South America,2373302,2349400,0.0102
+Phnom Penh,Cambodia,Asia,2352680,2281198,0.0313
+Sendai,Japan,Asia,2341433,2342302,-0.0004
+Taoyuan,Taiwan,Asia,2338724,2318850,0.0086
+Xuzhou,China,Asia,2332531,2287166,0.0198
+Aleppo,Syria,Asia,2317650,2203025,0.052
+Houston,United States,North America,2305889,2304383,0.0007
+Tijuana,Mexico,North America,2297216,2259787,0.0166
+Esfahan,Iran,Asia,2294589,2258396,0.016
+Nashik,India,Asia,2294299,2237369,0.0254
+Vijayawada,India,Asia,2290785,2229765,0.0274
+Amman,Jordan,Asia,2252688,2232240,0.0092
+Putian,China,Asia,2250104,2176022,0.034
+Multan,Pakistan,Asia,2205407,2154600,0.0236
+Grande Vitoria,Brazil,South America,2196818,2170513,0.0121
+Wuhu Anhui,China,Asia,2195262,2124797,0.0332
+Mecca,Saudi Arabia,Asia,2184560,2149928,0.0161
+Kollam,India,Asia,2181940,2106606,0.0358
+Naples,Italy,Europe,2180027,2179384,0.0003
+Daegu,South Korea,Asia,2179929,2180997,-0.0005
+Conakry,Guinea,Africa,2178596,2110937,0.0321
+Yangzhou,China,Asia,2175102,2131291,0.0206
+Havana,Cuba,Africa,2152518,2148930,0.0017
+Taizhou Zhejiang,China,Asia,2152226,2102143,0.0238
+Baoding,China,Asia,2149703,2107539,0.02
+Perth,Australia,Oceania,2143491,2117997,0.012
+Brussels,Belgium,Europe,2132178,2121992,0.0048
+Linyi Shandong,China,Asia,2120049,2076364,0.021
+Bursa,Turkey,Asia,2115513,2086324,0.014
+Rajkot,India,Asia,2096981,2043107,0.0264
+Minsk,Belarus,Europe,2064733,2057257,0.0036
+Hiroshima,Japan,Asia,2062884,2067591,-0.0023
+Haikou,China,Asia,2056646,2016092,0.0201
+Daqing,China,Asia,2044371,2000656,0.0219
+Lome,Togo,Africa,2042734,1981615,0.0308
+Lianyungang,China,Asia,2035631,1986439,0.0248
+Yancheng Jiangsu,China,Asia,2034326,1993463,0.0205
+Panama City,Panama,North America,2015735,1976866,0.0197
+Almaty,Kazakhstan,Asia,2015209,1987301,0.014
+Semarang,Indonesia,Asia,2013571,1975306,0.0194
+Hyderabad,Pakistan,Asia,2011964,1967684,0.0225
+Valencia,Venezuela,South America,2007265,1983445,0.012
+Davao City,Philippines,Asia,1991457,1949400,0.0216
+Vienna,Austria,Europe,1990487,1975271,0.0077
+Rabat,Morocco,Africa,1989197,1959388,0.0152
+Ludhiana,India,Asia,1988438,1951085,0.0191
+Quito,Ecuador,South America,1986667,1956995,0.0152
+Benin City,Nigeria,Africa,1972558,1904631,0.0357
+La Paz,Bolivia,South America,1965570,1935619,0.0155
+Baixada Santista,Brazil,South America,1965110,1947785,0.0089
+West Yorkshire,United Kingdom,Europe,1942470,1928661,0.0072
+Can Tho,Vietnam,Asia,1938915,1865172,0.0395
+Zhuhai,China,Asia,1930373,1889829,0.0215
+Leon De Los Aldamas,Mexico,North America,1924435,1898749,0.0135
+Quanzhou,China,Asia,1920733,1869994,0.0271
+Matola,Mozambique,Africa,1915035,1852405,0.0338
+Datong,China,Asia,1913674,1873693,0.0213
+Sharjah,United Arab Emirates,Asia,1872199,1830858,0.0226
+Madurai,India,Asia,1871912,1834279,0.0205
+Raipur,India,Asia,1871107,1816813,0.0299
+Adana,Turkey,Asia,1856638,1835895,0.0113
+Santa Cruz,Bolivia,South America,1855732,1820114,0.0196
+Palembang,Indonesia,Asia,1852673,1818421,0.0188
+Mosul,Iraq,Asia,1847691,1792020,0.0311
+Cixi,China,Asia,1840039,1788871,0.0286
+Meerut,India,Asia,1835403,1797805,0.0209
+Gaziantep,Turkey,Asia,1833006,1804704,0.0157
+La Laguna,Mexico,North America,1826135,1780592,0.0256
+Batam,Indonesia,Asia,1806147,1748142,0.0332
+Turin,Italy,Europe,1805727,1801944,0.0021
+Warsaw,Poland,Europe,1799451,1797516,0.0011
+Jiangmen,China,Asia,1797469,1768511,0.0164
+Varanasi,India,Asia,1789047,1754425,0.0197
+Hamburg,Germany,Europe,1787280,1787520,-0.0001
+Montevideo,Uruguay,South America,1781363,1774396,0.0039
+Budapest,Hungary,Europe,1780391,1778052,0.0013
+Lyon,France,Europe,1774395,1761188,0.0075
+Xiangyang,China,Asia,1772318,1742706,0.017
+Bucharest,Romania,Europe,1767520,1776385,-0.005
+Yichang,China,Asia,1758100,1711244,0.0274
+Yinchuan,China,Asia,1757699,1716591,0.0239
+Shiraz,Iran,Asia,1742750,1720954,0.0127
+Kananga,DR Congo,Africa,1738716,1664442,0.0446
+Srinagar,India,Asia,1737502,1698277,0.0231
+Monrovia,Liberia,Africa,1735365,1678020,0.0342
+Tiruppur,India,Asia,1731862,1677173,0.0326
+Jamshedpur,India,Asia,1730521,1695060,0.0209
+Suqian,China,Asia,1726327,1664968,0.0369
+Aurangabad,India,Asia,1725283,1683389,0.0249
+Qinhuangdao,China,Asia,1723728,1680962,0.0254
+Stockholm,Sweden,Europe,1719604,1700066,0.0115
+Anshan,China,Asia,1713452,1689499,0.0142
+Glasgow,United Kingdom,,1708147,1698088,0.0059
+Xining,China,Asia,1705078,1666605,0.0231
+Makassar,Indonesia,Asia,1704930,1673094,0.019
+Hengyang,China,Asia,1702012,1661854,0.0242
+Novosibirsk,Russia,Asia,1701510,1694765,0.004
+Ulaanbaatar,Mongolia,Asia,1699363,1672627,0.016
+Onitsha,Nigeria,Africa,1694913,1623382,0.0441
+Jilin,China,Asia,1693701,1668785,0.0149
+Anyang,China,Asia,1693375,1642347,0.0311
+Auckland,New Zealand,Oceania,1692770,1673220,0.0117
+Tabriz,Iran,Asia,1678028,1660737,0.0104
+Phoenix,United States,North America,1676481,1660445,0.0097
+Muscat,Oman,Asia,1676167,1650319,0.0157
+Calgary,Canada,North America,1665023,1639613,0.0155
+Qiqihaer,China,Asia,1662407,1635458,0.0165
+N Djamena,Chad,Africa,1655618,1592324,0.0397
+Marseille,France,Europe,1635707,1627549,0.005
+Cordoba,Argentina,South America,1625937,1611651,0.0089
+Jodhpur,India,Asia,1625325,1586547,0.0244
+Kathmandu,Nepal,Asia,1621642,1571010,0.0322
+Rosario,Argentina,South America,1613041,1594096,0.0119
+Tegucigalpa,Honduras,North America,1609261,1568025,0.0263
+Ciudad Juarez,Mexico,North America,1604085,1582313,0.0138
+Harare,Zimbabwe,Africa,1603201,1578128,0.0159
+Karaj,Iran,Asia,1603011,1593608,0.0059
+Medina,Saudi Arabia,Asia,1598976,1572571,0.0168
+Jining Shandong,China,Asia,1595963,1569560,0.0168
+Abu Dhabi,United Arab Emirates,Asia,1593284,1566999,0.0168
+Munich,Germany,Europe,1584507,1576416,0.0051
+Ranchi,India,Asia,1584237,1547258,0.0239
+Daejon,South Korea,Asia,1581705,1577436,0.0027
+Zhangjiakou,China,Asia,1568122,1536171,0.0208
+Edmonton,Canada,North America,1567615,1544448,0.015
+Mandalay,Myanmar,Asia,1563021,1531860,0.0203
+Gaoxiong,Taiwan,Asia,1559085,1552899,0.004
+Kota,India,Asia,1558468,1516795,0.0275
+Natal,Brazil,South America,1556413,1535316,0.0137
+Nouakchott,Mauritania,Africa,1552146,1491958,0.0403
+Jabalpur,India,Asia,1551004,1522121,0.019
+Huainan,China,Asia,1538603,1512668,0.0171
+Grande Sao Luis,Brazil,South America,1536017,1523629,0.0081
+Asansol,India,Asia,1534081,1505033,0.0193
+Philadelphia,United States,North America,1533916,1550587,-0.0107
+Yekaterinburg,Russia,Asia,1532970,1527728,0.0034
+Gwangju,South Korea,Asia,1532902,1529472,0.0022
+Yiwu,China,Asia,1525749,1483320,0.0286
+Chaozhou,China,Asia,1520628,1496298,0.0163
+Gwalior,India,Asia,1508846,1475016,0.0229
+Ganzhou,China,Asia,1508037,1459678,0.0331
+San Antonio,United States,North America,1506593,1489751,0.0113
+Homs,Syria,Asia,1499603,1443429,0.0389
+Niamey,Niger,Africa,1496258,1437233,0.0411
+Mombasa,Kenya,Africa,1495223,1440396,0.0381
+Allahabad,India,Asia,1493346,1465152,0.0192
+Basra,Iraq,Asia,1485156,1448124,0.0256
+Kisangani,DR Congo,Africa,1483513,1423395,0.0422
+San Jose,Costa Rica,North America,1482460,1461989,0.014
+Amritsar,India,Asia,1480470,1451748,0.0198
+Taizhou Jiangsu,China,Asia,1477600,1446810,0.0213
+Chon Buri,Thailand,Asia,1472709,1454222,0.0127
+Jiaxing,China,Asia,1470917,1424982,0.0322
+Weihai,China,Asia,1465926,1429315,0.0256
+Hai Phong,Vietnam,Asia,1463650,1422974,0.0286
+Ottawa,Canada,North America,1451571,1437188,0.01
+Zurich,Switzerland,Europe,1443349,1431538,0.0083
+Taian Shandong,China,Asia,1441911,1416064,0.0183
+Queretaro,Mexico,North America,1436818,1413474,0.0165
+Joao Pessoa,Brazil,South America,1435125,1421827,0.0094
+Kaifeng,China,Asia,1434463,1398262,0.0259
+Cochabamba,Bolivia,South America,1430688,1400250,0.0217
+Konya,Turkey,Asia,1429935,1407632,0.0158
+Liuyang,China,Asia,1428802,1373523,0.0402
+Liuan,China,Asia,1427894,1378077,0.0361
+Rizhao,China,Asia,1426583,1391258,0.0254
+Kharkiv,Ukraine,Europe,1418978,1421052,-0.0015
+Dhanbad,India,Asia,1414532,1389776,0.0178
+Nanchong,China,Asia,1412714,1377572,0.0255
+Dongying,China,Asia,1410791,1379377,0.0228
+Belgrade,Serbia,Europe,1410697,1408144,0.0018
+Zunyi,China,Asia,1406091,1376453,0.0215
+Zhanjiang,China,Asia,1399310,1371998,0.0199
+Bucaramanga,Colombia,South America,1396632,1381498,0.011
+Uyo,Nigeria,Africa,1393453,1329284,0.0483
+Copenhagen,Denmark,Europe,1391205,1381005,0.0074
+Shiyan,China,Asia,1387377,1354025,0.0246
+Taizhong,Taiwan,Asia,1381855,1369066,0.0093
+Bareilly,India,Asia,1380715,1348664,0.0238
+Pointe Noire,Republic of the Congo,,1379368,1336387,0.0322
+Adelaide,Australia,Oceania,1379280,1366783,0.0091
+Suweon,South Korea,Asia,1378229,1365352,0.0094
+Mwanza,Tanzania,Africa,1378014,1310754,0.0513
+Mianyang Sichuan,China,Asia,1376449,1351383,0.0185
+Samut Prakan,Thailand,Asia,1376146,1358871,0.0127
+Maceio,Brazil,South America,1375984,1363510,0.0091
+San Diego,United States,North America,1375452,1378307,-0.0021
+Qom,Iran,Asia,1373800,1354174,0.0145
+Antalya,Turkey,Asia,1372400,1347240,0.0187
+Joinville,Brazil,South America,1361992,1348521,0.01
+Tengzhou,China,Asia,1360779,1322916,0.0286
+Yingkou,China,Asia,1355564,1323174,0.0245
+Ad Dammam,Saudi Arabia,Asia,1352912,1329291,0.0178
+Suzhou,China,Asia,1349994,1310433,0.0302
+Tanger,Morocco,Africa,1348848,1314178,0.0264
+Freetown,Sierra Leone,Africa,1347559,1309168,0.0293
+Helsinki,Finland,Europe,1346810,1337786,0.0067
+Aligarh,India,Asia,1346018,1312369,0.0256
+Moradabad,India,Asia,1335966,1301740,0.0263
+Pekan Baru,Indonesia,Asia,1334532,1303355,0.0239
+Maoming,China,Asia,1333930,1303900,0.023
+Lilongwe,Malawi,Africa,1333096,1276316,0.0445
+Porto,Portugal,Europe,1329301,1324652,0.0035
+Prague,Czech Republic,,1327947,1323339,0.0035
+Astana,Kazakhstan,Asia,1324111,1291280,0.0254
+Jieyang,China,Asia,1320779,1282479,0.0299
+Fushun Liaoning,China,Asia,1317276,1304565,0.0097
+Mysore,India,Asia,1316461,1288245,0.0219
+Abomey Calavi,Benin,Africa,1314916,1252890,0.0495
+Ruian,China,Asia,1314784,1281790,0.0257
+Fes,Morocco,Africa,1313311,1290039,0.018
+Port Elizabeth,South Africa,Africa,1312631,1295928,0.0129
+Florianopolis,Brazil,South America,1309895,1294486,0.0119
+Ahvaz,Iran,Asia,1309372,1293619,0.0122
+Bukavu,DR Congo,Africa,1308469,1248783,0.0478
+Nnewi,Nigeria,Africa,1300993,1239186,0.0499
+Kazan,Russia,Asia,1296232,1291884,0.0034
+Jinhua,China,Asia,1296065,1257941,0.0303
+Dallas,United States,North America,1295447,1297495,-0.0016
+San Luis Potosi,Mexico,North America,1292133,1273325,0.0148
+Baoji,China,Asia,1290231,1261077,0.0231
+Durg Bhilainagar,India,Asia,1289673,1266034,0.0187
+Bhubaneswar,India,Asia,1289254,1257642,0.0251
+Kigali,Rwanda,Africa,1287952,1247551,0.0324
+Sofia,Bulgaria,Europe,1287540,1288114,-0.0004
+Pingdingshan Henan,China,Asia,1285750,1256581,0.0232
+Dublin,Ireland,Europe,1284551,1270172,0.0113
+Puning,China,Asia,1282756,1254160,0.0228
+Chifeng,China,Asia,1279544,1252414,0.0217
+Zhuzhou,China,Asia,1277238,1254519,0.0181
+Bujumbura,Burundi,Africa,1277050,1206767,0.0582
+Zhenjiang Jiangsu,China,Asia,1275395,1250668,0.0198
+Liupanshui,China,Asia,1272872,1230644,0.0343
+Barquisimeto,Venezuela,South America,1267872,1254192,0.0109
+Islamabad,Pakistan,Asia,1266792,1232447,0.0279
+Huaibei,China,Asia,1264856,1236271,0.0231
+Tasikmalaya,Indonesia,Asia,1258124,1213778,0.0365
+Maracay,Venezuela,South America,1256553,1242945,0.0109
+Bogor,Indonesia,Asia,1256155,1231445,0.0201
+Da Nang,Vietnam,Asia,1253228,1220634,0.0267
+Nizhniy Novgorod,Russia,Asia,1250302,1251332,-0.0008
+Nanyang Henan,China,Asia,1250300,1224629,0.021
+Xiangtan Hunan,China,Asia,1249380,1223912,0.0208
+Pizhou,China,Asia,1247177,1207275,0.0331
+Tiruchirappalli,India,Asia,1244978,1221960,0.0188
+Chelyabinsk,Russia,Asia,1243883,1240926,0.0024
+Mendoza,Argentina,South America,1242319,1226427,0.013
+Luohe,China,Asia,1241152,1197935,0.0361
+Xiongan,China,Asia,1240158,1183042,0.0483
+Chandigarh,India,Asia,1239699,1214775,0.0205
+Merida,Mexico,North America,1239654,1220603,0.0156
+Jinzhou,China,Asia,1238377,1215376,0.0189
+Benxi,China,Asia,1237550,1216852,0.017
+Binzhou,China,Asia,1233584,1200222,0.0278
+Aba,Nigeria,Africa,1230407,1188803,0.035
+Chiang Mai,Thailand,Asia,1228773,1213348,0.0127
+Bazhong,China,Asia,1225591,1175989,0.0422
+Quetta,Pakistan,Asia,1221495,1190348,0.0262
+Kaduna,Nigeria,Africa,1221451,1187398,0.0287
+Guilin,China,Asia,1218067,1196841,0.0177
+Saharanpur,India,Asia,1207856,1171689,0.0309
+Hubli Dharwad,India,Asia,1205428,1181194,0.0205
+Yueqing,China,Asia,1201400,1169864,0.027
+Guwahati,India,Asia,1199455,1176330,0.0197
+Mexicali,Mexico,North America,1196982,1178477,0.0157
+Salem,India,Asia,1194757,1169953,0.0212
+Maputo,Mozambique,Africa,1193253,1162793,0.0262
+Tripoli,Libya,Africa,1192436,1183292,0.0077
+Haifa,Israel,Asia,1186475,1174429,0.0103
+Bandar Lampung,Indonesia,Asia,1186233,1162242,0.0206
+Bobo Dioulasso,Burkina Faso,Africa,1185053,1128646,0.05
+Amsterdam,Netherlands,Europe,1181817,1174025,0.0066
+Shimkent,Kazakhstan,Asia,1181020,1155073,0.0225
+Omsk,Russia,Asia,1180677,1180745,-0.0001
+Aguascalientes,Mexico,North America,1179301,1161448,0.0154
+Hargeysa,Somalia,Africa,1176617,1127198,0.0438
+Krasnoyarsk,Russia,Asia,1173095,1166792,0.0054
+Xinxiang,China,Asia,1160840,1140599,0.0177
+Siliguri,India,Asia,1159371,1126249,0.0294
+Wenling,China,Asia,1159259,1131361,0.0247
+Samara,Russia,Asia,1154451,1155732,-0.0011
+Zaozhuang,China,Asia,1150859,1133629,0.0152
+Cologne,Germany,Europe,1149014,1143715,0.0046
+Yongin,South Korea,Asia,1147967,1135671,0.0108
+Ufa,Russia,Asia,1146786,1144799,0.0017
+Fuyang,China,Asia,1146343,1120694,0.0229
+Ikorodu,Nigeria,Africa,1145224,1093308,0.0475
+Bien Hoa,Vietnam,Asia,1142997,1110824,0.029
+Jalandhar,India,Asia,1142682,1118826,0.0213
+Panjin,China,Asia,1142542,1120675,0.0195
+Ma'anshan,China,Asia,1140264,1112680,0.0248
+Cuernavaca,Mexico,North America,1140169,1123843,0.0145
+Rostov on Don,Russia,Asia,1139641,1138854,0.0007
+Chihuahua,Mexico,North America,1135342,1116295,0.0171
+Fuzhou Jiangxi,China,Asia,1131718,1100271,0.0286
+Tshikapa,DR Congo,Africa,1131226,1077108,0.0502
+Shangrao,China,Asia,1130887,1106736,0.0218
+Samarinda,Indonesia,Asia,1128176,1100324,0.0253
+Bishkek,Kyrgyzstan,Asia,1127721,1104742,0.0208
+Zhaoqing,China,Asia,1127601,1103202,0.0221
+San Salvador,El Salvador,North America,1123376,1116052,0.0066
+Yichun Jiangxi,China,Asia,1122041,1078630,0.0402
+Chenzhou,China,Asia,1119791,1084969,0.0321
+Sekondi Takoradi,Ghana,Africa,1119534,1077929,0.0386
+Leshan,China,Asia,1116497,1087409,0.0267
+Aden,Yemen,Asia,1116193,1079670,0.0338
+Goyang,South Korea,Asia,1114079,1105283,0.008
+Diyarbakir,Turkey,Asia,1113333,1096937,0.0149
+Asmara,Eritrea,Africa,1111748,1072666,0.0364
+Dezhou,China,Asia,1108356,1080680,0.0256
+Jingzhou Hubei,China,Asia,1108067,1089886,0.0167
+Managua,Nicaragua,North America,1107118,1094510,0.0115
+Johor Bahru,Malaysia,Asia,1107001,1086214,0.0191
+Kermanshah,Iran,Asia,1101611,1084623,0.0157
+Nyala,Sudan,Africa,1101314,1056952,0.042
+Oslo,Norway,Europe,1100868,1085992,0.0137
+Kirkuk,Iraq,Asia,1100390,1074884,0.0237
+Yerevan,Armenia,Asia,1097542,1094813,0.0025
+Cartagena,Colombia,South America,1096463,1087599,0.0082
+Changshu,China,Asia,1093687,1059902,0.0319
+Huzhou,China,Asia,1091811,1067651,0.0226
+Xuchang,China,Asia,1091744,1063876,0.0262
+Solapur,India,Asia,1088131,1070322,0.0166
+Lille,France,Europe,1085199,1079120,0.0056
+Mersin,Turkey,Asia,1084817,1069402,0.0144
+Tbilisi,Georgia,Asia,1084471,1082245,0.0021
+Perm,Russia,Asia,1084120,1081768,0.0022
+Voronezh,Russia,Asia,1083724,1080808,0.0027
+Denpasar,Indonesia,Asia,1075244,1053041,0.0211
+Toulouse,France,Europe,1070746,1060460,0.0097
+Blantyre Limbe,Malawi,Africa,1070625,1030974,0.0385
+Aracaju,Brazil,South America,1070122,1056986,0.0124
+Marrakech,Morocco,Africa,1067172,1049690,0.0167
+Qujing,China,Asia,1066897,1038964,0.0269
+Yueyang,China,Asia,1064166,1048889,0.0146
+Ilorin,Nigeria,Africa,1063713,1030498,0.0322
+Tampico,Mexico,North America,1062567,1047251,0.0146
+Antwerp,Belgium,Europe,1061089,1057215,0.0037
+Teresina,Brazil,South America,1059657,1050459,0.0088
+Guiping,China,Asia,1055921,1020399,0.0348
+Warangal,India,Asia,1055604,1031090,0.0238
+Changwon,South Korea,Asia,1055373,1054442,0.0009
+Padang,Indonesia,Asia,1052849,1033645,0.0186
+Saltillo,Mexico,North America,1050320,1034126,0.0157
+Xintai,China,Asia,1049486,1023756,0.0251
+Cancun,Mexico,North America,1045005,1022604,0.0219
+Cebu City,Philippines,Asia,1042613,1024945,0.0172
+San Miguel De Tucuman,Argentina,South America,1039226,1026767,0.0121
+Hamah,Syria,Asia,1034498,995747,0.0389
+Acapulco De Juarez,Mexico,North America,1032772,1018976,0.0135
+Warri,Nigeria,Africa,1031425,986921,0.0451
+Kayseri,Turkey,Asia,1025507,1013240,0.0121
+Chengde,China,Asia,1024521,993097,0.0316
+Owerri,Nigeria,Africa,1022922,983352,0.0402
+Rotterdam,Netherlands,Europe,1021919,1018012,0.0038
+Pingxiang Jiangxi,China,Asia,1021575,999721,0.0219
+Zhucheng,China,Asia,1019600,991208,0.0286
+Songkhla,Thailand,Asia,1017784,1005007,0.0127
+Valparaiso,Chile,South America,1016585,1008599,0.0079
+Dehradun,India,Asia,1016402,991876,0.0247
+Nonthaburi,Thailand,Asia,1013672,1000947,0.0127
+Leiyang,China,Asia,1013191,978327,0.0356
+Dushanbe,Tajikistan,Asia,1012794,986899,0.0262
+Nampula,Mozambique,Africa,1012582,969322,0.0446
+Misratah,Libya,Africa,1011119,984193,0.0274
+Krasnodar,Russia,Asia,1010552,1001155,0.0094
+Laiwu,China,Asia,1009727,986248,0.0238
+Bordeaux,France,Europe,1009594,1000475,0.0091
+Jixi Heilongjiang,China,Asia,1008989,993175,0.0159
+San Pedro Sula,Honduras,North America,1008220,982021,0.0267
+Odesa,Ukraine,Europe,1007596,1007716,-0.0001
+Jiujiang,China,Asia,1004247,982777,0.0218
+Lubango,Angola,Africa,1003016,958548,0.0464
+Morelia,Mexico,North America,1002461,988744,0.0139
+Jos,Nigeria,Africa,1001155,970129,0.032
+Sylhet,Bangladesh,Asia,999374,964291,0.0364
+Agadir,Morocco,Africa,998146,979248,0.0193
+Volgograd,Russia,Asia,993352,995078,-0.0017
+Mudanjiang,China,Asia,992414,975348,0.0175
+Jacksonville,United States,North America,990931,981125,0.01
+Guigang,China,Asia,990310,967428,0.0237
+Fort Worth,United States,North America,989842,973275,0.017
+Najaf,Iraq,Asia,987814,958487,0.0306
+Bangui,Central African Republic,,985965,958335,0.0288
+Rajshahi,Bangladesh,Asia,983707,961991,0.0226
+Hengshui,China,Asia,983694,955663,0.0293
+Austin,United States,North America,983126,978786,0.0044
+Jerusalem,Israel,Asia,983097,969804,0.0137
+Zhangzhou,China,Asia,980054,955519,0.0257
+Xinyu,China,Asia,979303,952278,0.0284
+Linfen,China,Asia,978614,951822,0.0281
+Tianmen,China,Asia,978317,953768,0.0257
+Ciudad Guayana,Venezuela,South America,978202,964266,0.0145
+Zamboanga City,Philippines,Asia,977081,960349,0.0174
+Yangjiang,China,Asia,976606,956079,0.0215
+Taiz,Yemen,Asia,974518,940600,0.0361
+Cucuta,Colombia,South America,972485,963045,0.0098
+Arequipa,Peru,South America,971296,958998,0.0128
+Liling,China,Asia,970907,936997,0.0362
+Antipolo,Philippines,Asia,968288,946653,0.0229
+Veracruz,Mexico,North America,968070,955226,0.0134
+Reynosa,Mexico,North America,967627,951417,0.017
+Khulna,Bangladesh,Asia,965483,955104,0.0109
+Deyang,China,Asia,963160,939166,0.0255
+Pathum Thani,Thailand,Asia,962126,950048,0.0127
+Bengbu,China,Asia,959784,944465,0.0162
+Jiangyin,China,Asia,959250,933395,0.0277
+Southampton,United Kingdom,,959202,951531,0.0081
+Villahermosa,Mexico,North America,958118,943530,0.0155
+Baishan,China,Asia,956976,927532,0.0317
+Nice,France,Europe,951808,948149,0.0039
+Oran,Algeria,Africa,950768,935947,0.0158
+West Rand,South Africa,Africa,947734,934341,0.0143
+Cabinda,Angola,Africa,947634,904676,0.0475
+Umuahia,Nigeria,Africa,947460,904139,0.0479
+Bogra,Bangladesh,Asia,944877,905814,0.0431
+Bahawalpur,Pakistan,Asia,944812,919654,0.0274
+Seongnam,South Korea,Asia,942159,941508,0.0007
+Guntur,India,Asia,940205,918324,0.0238
+Dnipro,Ukraine,Europe,936766,941586,-0.0051
+Campo Grande,Brazil,South America,934936,926095,0.0095
+Malang,Indonesia,Asia,933392,919443,0.0152
+Londrina,Brazil,South America,932892,922425,0.0113
+Dandong,China,Asia,932648,917936,0.016
+San Jose,United States,North America,932636,951934,-0.0203
+Changzhi,China,Asia,930620,910743,0.0218
+Hermosillo,Mexico,North America,929961,915060,0.0163
+Bhiwandi,India,Asia,924670,906581,0.02
+La Plata,Argentina,South America,923715,914036,0.0106
+Liverpool,United Kingdom,Europe,922871,917032,0.0064
+Ashgabat,Turkmenistan,Asia,921601,902353,0.0213
+Concepcion,Chile,South America,920916,911862,0.0099
+Charlotte,United States,North America,920325,909022,0.0124
+Puducherry,India,Asia,919280,897983,0.0237
+Changde,China,Asia,919026,898338,0.023
+Bergamo,Italy,Europe,918675,913376,0.0058
+Firozabad,India,Asia,918218,894388,0.0266
+Erbil,Iraq,Asia,917639,896716,0.0233
+Tyumen,Russia,Asia,916862,903815,0.0144
+Trujillo,Peru,South America,916632,903896,0.0141
+Liaoyang,China,Asia,916238,900692,0.0173
+Shangqiu,China,Asia,915823,895111,0.0231
+Ulsan,South Korea,Asia,914300,912734,0.0017
+Tuxtla Gutierrez,Mexico,North America,913075,897694,0.0171
+Columbus,United States,North America,909676,908823,0.0009
+Kuerle,China,Asia,906765,875496,0.0357
+Soshanguve,South Africa,Africa,905868,892254,0.0153
+Xingtai,China,Asia,904070,886381,0.02
+Culiacan,Mexico,North America,903910,888620,0.0172
+Quzhou,China,Asia,902621,871457,0.0358
+Cherthala,India,Asia,901820,870465,0.036
+Huangshi,China,Asia,893107,876930,0.0184
+Fuxin,China,Asia,889767,876131,0.0156
+Lokoja,Nigeria,Africa,885882,839046,0.0558
+Hufuf Mubarraz,Saudi Arabia,Asia,884753,872438,0.0141
+Libreville,Gabon,Africa,883920,869773,0.0163
+Yongzhou,China,Asia,883326,860522,0.0265
+Xinghua,China,Asia,882986,861978,0.0244
+Donetsk,Ukraine,Europe,882209,887716,-0.0062
+Yibin,China,Asia,881480,864910,0.0192
+Enugu,Nigeria,Africa,875552,846560,0.0342
+Tainan,Taiwan,Asia,875392,869625,0.0066
+Indianapolis (balance),United States,North America,874089,877355,-0.0037
+Xinyang,China,Asia,873268,855191,0.0211
+Ipoh,Malaysia,Asia,872424,857225,0.0177
+Luzhou,China,Asia,870714,857683,0.0152
+Banghazi,Libya,Africa,870502,859209,0.0131
+Maiduguri,Nigeria,Africa,870201,844747,0.0301
+Yangquan,China,Asia,869585,851630,0.0211
+Huaihua,China,Asia,869575,843754,0.0306
+Xiaogan,China,Asia,869479,849580,0.0234
+Tianshui,China,Asia,858672,837479,0.0253
+Bunia,DR Congo,Africa,856339,812090,0.0545
+Bozhou,China,Asia,854946,830125,0.0299
+Kottayam,India,Asia,853635,818628,0.0428
+Zhuji,China,Asia,852608,834782,0.0214
+Kunshan,China,Asia,851399,826414,0.0302
+Quebec City,Canada,North America,851061,844249,0.0081
+Palermo,Italy,Europe,850233,849687,0.0006
+Winnipeg,Canada,North America,849251,841108,0.0097
+Orumiyeh,Iran,Asia,848443,835900,0.015
+Eskisehir,Turkey,Asia,848002,834065,0.0167
+Benguela,Angola,Africa,843207,809468,0.0417
+Jincheng,China,Asia,841928,818057,0.0292
+Valencia,Spain,Europe,839770,838301,0.0018
+Heze,China,Asia,838928,826777,0.0147
+Saratov,Russia,Asia,837687,838377,-0.0008
+Nellore,India,Asia,837660,816293,0.0262
+Huludao,China,Asia,836344,821132,0.0185
+Zanzibar,Tanzania,Africa,835850,800010,0.0448
+Barcelona Puerto La Cruz,Venezuela,South America,835805,825581,0.0124
+Bikaner,India,Asia,835802,818566,0.0211
+Haicheng,China,Asia,834639,821192,0.0164
+Gebze,Turkey,Asia,831360,813394,0.0221
+Taixing,China,Asia,830623,811451,0.0236
+Liaocheng,China,Asia,830004,813369,0.0205
+Zhumadian,China,Asia,829361,804537,0.0309
+Newcastle Upon Tyne,United Kingdom,,828712,823431,0.0064
+Langfang,China,Asia,827967,807833,0.0249
+Bucheon,South Korea,Asia,826919,826981,-0.0001
+Sulaimaniya,Iraq,Asia,823199,800793,0.028
+Xalapa,Mexico,North America,822863,811041,0.0146
+Malanje,Angola,Africa,822471,783243,0.0501
+Anqiu,China,Asia,821765,791931,0.0377
+Sorocaba,Brazil,South America,821435,813320,0.01
+Gaomi,China,Asia,821154,797964,0.0291
+Dasmarinas,Philippines,Asia,820886,802600,0.0228
+Cagayan De Oro City,Philippines,Asia,820297,803194,0.0213
+Hanchuan,China,Asia,818761,795835,0.0288
+Meishan,China,Asia,818037,796756,0.0267
+Bologna,Italy,Europe,816848,814332,0.0031
+Ar Rayyan,Qatar,Asia,815869,798382,0.0219
+Thessaloniki,Greece,Europe,814980,814524,0.0006
+Muzaffarnagar,India,Asia,814491,791214,0.0294
+Kayamkulam,India,Asia,813379,786192,0.0346
+Nottingham,United Kingdom,,813078,806757,0.0078
+Nakhon Ratchasima,Thailand,Asia,811446,801853,0.012
+Danyang,China,Asia,810450,789755,0.0262
+Ibb,Yemen,Asia,810149,771514,0.0501
+Amravati,India,Asia,808263,792620,0.0197
+Jiaozuo,China,Asia,808079,796509,0.0145
+Vereeniging,South Africa,Africa,802900,793927,0.0113
+Gorakhpur,India,Asia,801634,788276,0.0169
+Gaza,Palestine,Asia,800636,778187,0.0288
+Frankfurt,Germany,Europe,800529,796437,0.0051
+Anqing,China,Asia,795987,779535,0.0211
+Niigata,Japan,Asia,795916,797865,-0.0024
+Oshogbo,Nigeria,Africa,795808,771515,0.0315
+Linhai,China,Asia,795777,776076,0.0254
+Shaoguan,China,Asia,794279,784230,0.0128
+Erduosi Ordoss,China,Asia,794143,774321,0.0256
+Merca,Somalia,Africa,793545,760129,0.044
+Bur Sa'id,Egypt,Africa,792925,778280,0.0188
+Kitwe,Zambia,Africa,792350,762981,0.0385
+Yan'an,China,Asia,791839,767188,0.0321
+Cuttack,India,Asia,789558,775559,0.0181
+Hamilton,Canada,North America,786843,781047,0.0074
+Zaria,Nigeria,Africa,786197,766007,0.0264
+Banjarmasin,Indonesia,Asia,785125,770959,0.0184
+Dengzhou,China,Asia,783041,759150,0.0315
+Belgaum,India,Asia,783020,767161,0.0207
+Malegaon,India,Asia,781925,764628,0.0226
+Goma,DR Congo,Africa,781875,744247,0.0506
+Zigong,China,Asia,779684,768075,0.0151
+Qingyuan,China,Asia,778628,766782,0.0154
+Yuncheng,China,Asia,777193,754711,0.0298
+Shaoyang,China,Asia,776404,761169,0.02
+Yanji,China,Asia,775672,757224,0.0244
+Tirupati,India,Asia,775455,752744,0.0302
+Maturin,Venezuela,South America,775097,758185,0.0223
+Yuxi,China,Asia,774356,750102,0.0323
+Akure,Nigeria,Africa,773141,744371,0.0387
+Tongliao,China,Asia,772756,756158,0.022
+Sialkot,Pakistan,Asia,770962,753325,0.0234
+Tongling,China,Asia,770032,752916,0.0227
+Krakow,Poland,Europe,769396,769417,0.0
+Ansan,South Korea,Asia,768822,766703,0.0028
+Wuzhou,China,Asia,768512,751679,0.0224
+Dazhou,China,Asia,767532,748257,0.0258
+Suining Sichuan,China,Asia,765887,750097,0.0211
+Mangalore,India,Asia,763312,749073,0.019
+Jiamusi,China,Asia,761903,749763,0.0162
+Al Hudaydah,Yemen,Asia,759157,734699,0.0333
+Seattle,United States,North America,757992,753624,0.0058
+Sargodha,Pakistan,Asia,757915,741818,0.0217
+Nay Pyi Taw,Myanmar,Asia,757823,722836,0.0484
+Tamale,Ghana,Africa,757506,729768,0.038
+Sao Jose Dos Campos,Brazil,South America,757137,749188,0.0106
+Bacoor,Philippines,Asia,757035,739682,0.0235
+Dongtai,China,Asia,756344,738200,0.0246
+Zhangjiagang,China,Asia,755752,733810,0.0299
+Nanded Waghala,India,Asia,755577,738552,0.0231
+Xianyang Shaanxi,China,Asia,754446,743491,0.0147
+Amara,Iraq,Asia,753708,729276,0.0335
+Zarqa,Jordan,Asia,753392,748428,0.0066
+Bhavnagar,India,Asia,751493,737128,0.0195
+Sheffield,United Kingdom,Europe,751303,745876,0.0073
+Huambo,Angola,Africa,751297,727641,0.0325
+Ribeirao Preto,Brazil,South America,750174,742115,0.0109
+Panzhihua,China,Asia,750036,738495,0.0156
