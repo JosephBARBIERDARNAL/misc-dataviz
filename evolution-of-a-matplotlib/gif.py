@@ -5,8 +5,8 @@ from PIL.Image import Resampling
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-path = 'evolution-of-a-matplotlib/japan-population'
-images_filenames = [f'{path}/japan-population-'+str(i)+'.png' for i in range(1, 20)]
+path = 'evolution-of-a-matplotlib/temperature'
+images_filenames = [f'{path}/temperature-'+str(i)+'.png' for i in range(1, 20)]
 images_for_gif = []
 
 new_size = (1000*3, 700*3)
