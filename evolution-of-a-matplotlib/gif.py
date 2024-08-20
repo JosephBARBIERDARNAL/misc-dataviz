@@ -5,13 +5,13 @@ from PIL.Image import Resampling
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-path = 'earthquakes'
-images_filenames = [f'{path}/earthquake-'+str(i)+'.png' for i in range(1, 20)]
+path = 'evolution-of-a-matplotlib/japan-population'
+images_filenames = [f'{path}/japan-population-'+str(i)+'.png' for i in range(1, 20)]
 images_for_gif = []
 
-new_size = (1000*3, 800*3)
+new_size = (1000*3, 700*3)
 
-def add_background(image, new_size, background_color=(20, 33, 61)):
+def add_background(image, new_size, background_color=(255,255,255)):
     """Adds a background to the image to fit the new size while preserving the aspect ratio."""
     img_w, img_h = image.size
     bg_w, bg_h = new_size
@@ -38,5 +38,5 @@ if images_for_gif:
     for _ in range(10):
         images_for_gif.append(last_frame)
 
-imageio.mimsave(f'{path}/output.gif', images_for_gif, duration=[700]*len(images_for_gif), format='GIF', loop=0)
+imageio.mimsave(f'{path}/output.gif', images_for_gif, duration=[900]*len(images_for_gif), format='GIF', loop=0)
 print('GIF created!')
