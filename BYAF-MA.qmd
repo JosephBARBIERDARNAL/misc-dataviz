@@ -1,0 +1,1779 @@
+---
+title: "But you are free technique on compliance meta analysis"
+author: "adrien fillon"
+format:
+  html:
+    toc: true
+    code-fold: true
+execute:
+  warning: false
+---
+
+```{r  }
+##This is a setup block for you to provide some basic infomation used in other parts of the document
+# Type the last name of the first author here
+Author <- "Fillon"
+
+# Review title
+Title<-"But you are free technique on compliance meta-analysis"
+
+#Define the variable names for the relationship of interest
+X<-"But you are free technique"
+Y<-"Compliance"
+
+#what is the name of the datafile ?
+filename<-"table_meta_analysis byaf.xlsx"
+
+if(!require(knitr)){install.packages('knitr', dependencies = TRUE)}
+library("knitr")
+
+# This automatically generates the year from the system date
+Year<-as.numeric(format(Sys.Date(), "%Y"))
+Sys.setenv(LANG = "en")
+options(scipen=999, digits =3)
+# Installing all the required packages for this analysis (if not already installed)
+list.of.packages <- c("plyr", "dplyr", "rstudioapi", "foreign", "metafor","pequod", "ggplot2", "psych", "compute.es", "devtools", "broom", "MBESS", "formatR", "MAd", "data.table", "weightr", "metaforest", "forcats", "rmarkdown","esc","Hmisc", "stringi", "readxl", "metaviz", "puniform", "dmetar")
+
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages, dependencies = TRUE)
+invisible(lapply(list.of.packages, library, character.only = TRUE)) 
+
+
+init.value <- c(0.5, 0.2, 0.10)
+alpha <- 0.05		# Size of two-sided test
+
+estimate.onestep.selection.heterogeneous <- function(z.obs,n1,n2,alpha,theta.init){
+	p.value <- 1 - pnorm(z.obs)
+	sel <- z.obs > 0 & p.value < alpha
+
+	if(sum(sel)==0 | sum(sel)==length(sel)){
+		if(sum(sel)==length(sel)){ w <- 1/(length(sel)+2) }		# Not identified; use Wilson-like
+		if(sum(sel)==0){ w <- 1 - 1/(length(sel)+2) }			# estimator.
+		e <- estimate.known.onestep.selection.heterogeneous(z.obs,n1,n2,w,alpha, theta.init[1:2])
+		tmp <- e[[2]]
+		tmp <- cbind(tmp, c(NA,NA))
+		tmp <- rbind(tmp, c(NA,NA,NA))
+		return(list(est=c(e[[1]],w), est.var=tmp, ll=e[[3]]))
+	}
+
+	if(sum(sel) > 0 & sum(sel)<length(sel)){
+		theta.init <- c(theta.init[1], log(theta.init[2:3]))
+		tmpf <- function(theta,z.obs,n1,n2,alpha){ onestep.heterogeneous.nll(c(theta[1],exp(theta[2:3])),z.obs,n1,n2,alpha) }
+		tmpg <- function(theta,z.obs,n1,n2,alpha){ onestep.heterogeneous.nll(c(theta[1],theta[2:3]),z.obs,n1,n2,alpha) }
+		tmpo <- optim(theta.init, tmpf, z.obs=z.obs, n1=n1, n2=n2, alpha=alpha)
+		theta.hat <- c(tmpo$par[1], exp(tmpo$par[2:3]))
+		tmpv <- matrix(NA, 3, 3)
+		suppressWarnings(try( tmpv <- solve(optimHess(theta.hat, tmpg, z.obs=z.obs, n1=n1, n2=n2, alpha=alpha)), silent=TRUE))
+		return(list(est=theta.hat, est.var=tmpv, ll=-tmpo$value))
+	}	
+}
+
+
+```
+
+# But you are free technique main effect analysis
+
+Analyses were conducted using the file `r filename`, to examine the impact of `r X` over `r Y`.
+
+<!-- ##Data importing and effect size calculation## -->
+<!-- Read `r filename` into R -->
+
+```{r loading}
+# Loading the master dataset
+dat <- read_excel("table_meta_analysis byaf.xlsx")
+dat$N<-dat$N...5
+dat$r<-dat$r...10
+# let's just keep the data that we need for effect-size calculations
+dataset <- dat[, c("Article",
+                   "Study",
+                   "Sample",
+                   "N",
+                   "OR",
+                   "r",
+                   "d",
+                   "Subject_gender",
+                   "Confederate_gender",
+                   "Country",
+                   "Culture",
+                   "Interactivity",
+                   "Induction",
+                   "Carpenter",
+                   "Type_of_request",
+                   "Immediate_or_delayed",
+                   "N_BYAF",
+                   "N_control",
+                   "Withgueguen",
+                   "D1",
+                   "D2",
+                   "D3",
+                   "D4",
+                   "D5",
+                   "Overall")]
+
+# set up an empty frame to hold the effect size
+dat2 <- data.frame(matrix(NA, nrow=nrow(dataset), ncol=2)) 
+names(dat2) <- c("yi","vi")
+
+# for (i in 1:nrow(dataset)){
+for (i in 1:nrow(dataset)) {  
+       # if we only have Cohen's d and Ns
+    if (!is.na(dataset$d[i]) & 
+        !is.na(dataset$N_BYAF[i]) & 
+        !is.na(dataset$N_control[i])) {
+      dat2$yi[i] <- dataset$d[i]
+      dat2$vi[i] <- 1/dataset$N_BYAF[i]+ 
+                    1/dataset$N_control[i] + 
+                    dataset$d[i]^2/(2*(dataset$N_BYAF[i]+dataset$N_control[i]))
+    } else 
+    # if we only have Cohen's d and overall
+    if (!is.na(dataset$d[i]) & 
+        !is.na(dataset$N[i])) {
+      dat2$yi[i] <- dataset$d[i] 
+      dat2$vi[i] <- 1/(dataset$N[i]/2) + 
+                    1/(dataset$N[i]/2) + 
+                    dataset$d[i]^2 / 
+                    (2*((dataset$N[i]/2)+(dataset$N[i]/2)))
+    } 
+  
+}
+
+dataset <- cbind(dataset,dat2)
+dataset$d <- dataset$yi
+dataset$dvar <- dataset$vi
+
+# convert Cohen's d to Hedge's g
+dataset$yi <- d_to_g(dataset$d, dataset$dvar,
+                     ifelse(!is.na(dataset$N_BYAF),dataset$N_BYAF, dataset$N/2),
+                     ifelse(!is.na(dataset$N_control),dataset$N_control, dataset$N/2))[,1]
+dataset$vi <- d_to_g(dataset$d, dataset$dvar,
+                     ifelse(!is.na(dataset$N_BYAF),dataset$N_BYAF, dataset$N/2),
+                     ifelse(!is.na(dataset$N_control),dataset$N_control, dataset$N/2))[,2]
+dataset <- dataset[!is.na(dataset$Article), ]
+```
+
+
+
+
+<!-- ##################### -->
+<!-- ##################### -->
+
+<!-- MAIN EFFECTS -->
+
+<!-- ##################### -->
+<!-- ##################### -->
+
+
+
+
+## Main Results
+
+### But you are free studies meta-analysis summary
+
+```{r Main results}
+
+#Conducting the meta-analyis
+#create a dataset1 with article study as factor
+dataset1 <- subset(dataset)
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+#aggregate the effect size by article
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+totalexp <- merge(byarticlestudy, collapsed,by="articlestudy")
+#two-level analysis : by author, by study
+allexpcollapsed <- rma(es, var, method = "REML", data = totalexp, slab = articlestudy)
+allexpcollapsed
+confint(allexpcollapsed, digits=3)
+
+# code from http://www.metafor-project.org/doku.php/analyses:konstantopoulos2011
+# same two level analysis with the rma.mv
+allexpcollapsedml2 <- rma.mv(yi, vi, random = ~ 1 | articlestudy, data=dataset1)
+allexpcollapsedml2
+print(allexpcollapsedml2, digits=3)
+
+# code from http://www.metafor-project.org/doku.php/analyses:konstantopoulos2011
+# three level, taking into account same article/authors
+allexpcollapsedml3 <- rma.mv(yi, vi, random = ~ 1 | Article/articlestudy, data=dataset1)
+allexpcollapsedml3
+print(allexpcollapsedml3, digits=3)
+
+par(mfrow=c(2,1))
+profile(allexpcollapsedml3, sigma2=1)
+profile(allexpcollapsedml3, sigma2=2)
+
+# code from http://www.metafor-project.org/doku.php/analyses:konstantopoulos2011
+# Estimated ICC Intraclass Correlation of the True Effects
+# The three-level model used in the meta-analysis above allows for the underlying true effects within articles to be correlated.
+ICC = round(allexpcollapsedml3$sigma2[1] / sum(allexpcollapsedml3$sigma2), 3)
+ICC
+
+allexpcollapsedml4 <- rma.mv(yi, vi, random = ~ factor(articlestudy) | Article, data=dataset1)
+allexpcollapsedml4
+
+```
+
+
+### Summary
+
+This analysis is based on `r allexpcollapsed$k` effect sizes that evaluated the impact of `r X` over `r Y`. 
+
+```{r summary}
+
+# Create a table of information from the res model
+allexpcollapsed.restable<-cbind.data.frame(allexpcollapsed$b, allexpcollapsed$se, 
+                            allexpcollapsed$pval, allexpcollapsed$ci.lb, allexpcollapsed$ci.ub,  allexpcollapsed$k)
+colnames(allexpcollapsed.restable)<-c("Hedge's g","SE", "p", "CI Lower", "CI Upper", "k")
+row.names(allexpcollapsed.restable)<-paste(X,"-",Y)
+
+# Create a table of heterogeneity information
+allexpcollapsed.hettable<-cbind.data.frame(allexpcollapsed$QE, 
+                            round(allexpcollapsed$QEp, digits = 3), allexpcollapsed$I2)
+colnames(allexpcollapsed.hettable)<-c("Q", "p", "I2")
+row.names(allexpcollapsed.hettable)<-paste(X,"-",Y)
+
+# Create a table of heterogeneity information
+allexpcollapsed.hettable<-cbind.data.frame(allexpcollapsed$QE, 
+                            ifelse(allexpcollapsed$QEp < 0.001, "< .001", round(allexpcollapsed$QEp,3)), allexpcollapsed$I2)
+colnames(allexpcollapsed.hettable)<-c("Q", "p", "I2")
+
+```
+
+
+### What is the effect size for `r X` over `r Y`?
+
+A random effects meta-analysis was conducted (k=`r allexpcollapsed$k`) to explore the effect of `r X` on `r Y`. The average effect-size was Hedge's g = `r round(allexpcollapsed$b,3)`, (p = `r ifelse(allexpcollapsed$pval < 0.001, "< .001", round(allexpcollapsed$pval,3))`, 95% CI [`r round(allexpcollapsed$ci.lb, 2)`, `r round(allexpcollapsed$ci.ub, 2)`]). See table below.
+
+`r kable(allexpcollapsed.restable, digits=3, row.names=NA, col.names=c("Hedge's g","SE", "p", "CI Lower", "CI Upper", "k"), caption="Meta-Analysis Summary Table")`
+
+### Does the effect-size vary across studies?
+
+A Cochran's Q test was conducted to examine whether variations in the observed effect-size are likely to be attributable soley to sampling error (Q~(df=`r allexpcollapsed$df.Q`)~=`r round(allexpcollapsed$QE,2)`, p=`r ifelse(allexpcollapsed$QEp < 0.001, "< .001", round(allexpcollapsed$QEp,3))`). `r ifelse(allexpcollapsed$QEp < 0.05, "The variation in effect-size is greater than would be expected from sampling error alone. It appears that the true effect varies betweeen studies.", "There is no evidence that the true effect size varies between studies.")`
+
+The I^2^ statistics indicates the *proportion* of variance in the observed effect attributable to sampling error. In this instance, the I^2^ = `r round(allexpcollapsed$I2,2)`%. 
+
+Heterogeneity statistics are summarised below
+`r kable(allexpcollapsed.hettable, digits=3, row.names=NA, col.names=c("Q", "p", "I^2^"),caption="Heterogeneity Summary Table")`
+
+<!-- Expand the plot width to 14 inches -->
+
+### Forest plot for Main effect
+
+```{r forest plot, fig.width=15, fig.height=25}
+pdf("maineffect.pdf", width=15, height=25)
+forest(allexpcollapsed, alim=c(-2,4), xlim=c(-5,5), ilab=totalexp$N, ilab.xpos=-2, cex=1.2)
+#add headlines to the forest
+op <- par(font=4)
+text(-5, allexpcollapsed$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 5, allexpcollapsed$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, allexpcollapsed$k+2, "Sample size",cex=1.2)
+par(op)
+dev.off()
+
+```
+
+### Funnel plot
+
+```{r funnel plot, fig.width=14, fig.height=6}
+
+# http://www.metafor-project.org/doku.php/plots:contour_enhanced_funnel_plot
+# Note that the funnel is centered not at the model estimate (as is usually done when drawing funnel plots), but at 0 (i.e., at the value under the null hypothesis of no effect). Various levels of statistical significance of the points/studies are indicated by the shaded regions. In particular, the unshaded (i.e., white) region in the middle corresponds to p-values greater than .10, the gray-shaded region corresponds to p-values between .10 and .05, the dark gray-shaded region corresponds to p-values between .05 and .01, and the region outside of the funnel corresponds to p-values below .01. Funnel plots drawn in this way are more useful for detecting publication bias due to the suppression of non-significant findings. See Peters et al. (2008) for more details. Note that, based on Sterne and Egger (2001), the vertical axis represents the standard error (as compared to Peters et al., 2008, who use the inverse of the standard error on the vertical axis).
+pdf("funnelplot.pdf")
+metafor::funnel(allexpcollapsed, level=c(90, 95, 99), shade=c("white", "gray", "darkgray"), refline=0)
+
+
+viz_sunset(allexpcollapsed, 
+           contours = TRUE,
+           true_effect = 0.13,
+           power_contours =  "continuous")
+
+
+
+
+```
+
+
+### Publication Bias
+
+
+#### Basic tests
+
+
+Please read Schwarzer's book chapter 5 pages 107-138 for for explanation of trimfill 
+(Also, can check Borenstein et al. (2009)'s  book, pages 284-287 )
+
+** Trim and Fill**
+```{r trim.and.fill, fig.height = 4, fig.width = 5.5, dpi = 600, fig.align = "center"}
+
+# run trim and fill
+
+viz_funnel(allexpcollapsed, contours_col = "Blues",
+           trim_and_fill = TRUE, trim_and_fill_side = "left", method="DL", contours=TRUE, egger = TRUE, xlab="Hedge's g")
+
+```
+
+** Rank test**
+
+```{r rank test}
+
+# to make the assymetry test more statistical rather than visual, let's do a ranktest
+ranktest(allexpcollapsed)
+
+#p<.05 : possible publication bias
+```
+
+** Reg test**
+
+```{r reg test}
+  
+regtest(allexpcollapsed)
+
+#p<.05 : possible publication bias
+
+```
+
+
+
+
+#### Advanced tests
+
+** PET PEESE **
+
+```{r pet peese}
+
+# From http://daniellakens.blogspot.com/2015/04/why-meta-analysis-of-90-precognition.html 
+# first let's convert from our meta to Daniel's variables
+
+#calculate variance and standard error
+totalexp$SE<-sqrt(totalexp$var)
+
+#PET
+PET<-lm(totalexp$es~totalexp$SE, weights = 1/totalexp$var)
+summary(PET)
+confint(PET)
+print(c(summary(PET)$coefficients[1], confint(PET)[1,1], confint(PET)[1,2]))
+
+#PEESE
+PEESE<-lm(totalexp$es~totalexp$var, weights = 1/totalexp$var)
+summary(PEESE)
+confint(PEESE)
+print(c(summary(PEESE)$coefficients[1], confint(PEESE)[1,1], confint(PEESE)[1,2]))
+
+#both pet and peese p value > .05 meaning publication bias
+```
+
+** puniform **
+```{r puniform}
+
+punif<- puniform (yi=totalexp$es, vi=totalexp$var, side="right", method="P", plot = "FALSE")
+print (punif)
+# est : 0.45 [0.37; 0.55], ksig = 46, non-pub bias
+
+```
+
+** pcurve **
+```{r pcurve, width = 10, height = 7}
+dat_pcurve<-data.table(TE = dataset$d, seTE = sqrt(dataset$dvar), studlab = dataset$Article) 
+pcurve(dat_pcurve, N=dataset$N)
+
+#Evidential value 
+#- Evidential value present: yes 
+#- Evidential value absent/inadequate: no 
+   
+# P-curve's estimate of the true effect size: d=0.409, indicating no pub bias  
+```
+
+** Three-parameter selection model **
+
+```{r 3psm}
+
+# read "Correcting for bias in psychology: A comparison of meta-analytic methods"
+# link: https://osf.io/preprints/psyarxiv/9h3nu
+# Conclusion: "Our results indicate that one method - the three-parameter selection model (Iyengar & Greenhouse, 1988; McShane, B?ckenholt, & Hansen, 2016) - generally performs better than trim-and-fill, p-curve, p-uniform, PET, PEESE, or PET-PEESE,"
+# McShane, B. B., B?ckenholt, U., & Hansen, K. T. (2016). Adjusting for publication bias
+# in meta-analysis: an evaluation of selection methods and some cautionary notes. Per-
+# spectives on Psychological Science, 11(5), 730-749.
+
+# Three-parameter selection model
+# weightr: https://www.rdocumentation.org/packages/weightr/versions/1.0.0/topics/weightfunct
+
+weightfunct(totalexp$es, totalexp$var, steps=c(.05/2,1))
+#likelihood ratio test : X^2(df = 1) = 4.71, p-val = 0.03, indicating publication bias
+#adjusted model : 0.44 [0.11; 0.77]
+
+```
+
+** Henmi & Copas (2010) **
+  
+```{r HetC}
+
+# Henmi & Copas (2010)
+# http://www.metafor-project.org/doku.php/analyses:henmi2010
+hc(allexpcollapsed)
+#0.38 [0.26; 0.51]indicating non nul results   
+
+
+```
+
+
+# Moderators analyses
+
+```{r moderator setting}
+
+# we'll setup a copy datasaset to clean output a bit for the Metaforest limited functions
+datasettmp <- dataset1
+datasettmp$Effect.size <- datasettmp$yi
+library(plyr)
+library(forcats)
+
+# metaforest doesn't accept NAs, just blanks
+datasettmp$Subject_gender <-fct_explicit_na(datasettmp$Subject_gender, na_level = "Unclear")
+datasettmp$Confederate_gender<-fct_explicit_na(datasettmp$Confederate_gender, na_level = "Unclear")
+datasettmp$Induction<-fct_explicit_na(datasettmp$Induction, na_level = "Unclear")
+datasettmp$Carpenter <- mapvalues(datasettmp$Carpenter, from = c("0", "1"), to = c("Before", "After"))
+datasettmp$Induction <- mapvalues(datasettmp$Induction, from = c("BYAF", "feel free", "You are free to refuse but", "Unclear", "Feel free", "Do not feel obliged", "do as you wish"), to = c("BYAF", "Other", "Other","Other","Other","Other","Other"))
+
+library(metaforest)
+#Conduct random-effects weighted MetaForest analysis
+set.seed(42)
+mf.random <- MetaForest(formula = yi ~ Subject_gender +
+                                  Confederate_gender + 
+                                  Induction +
+                                  Culture +
+                                  Carpenter+
+                                  Type_of_request+
+                                  Immediate_or_delayed+
+                                  Withgueguen, 
+                                  data = datasettmp,
+                                  whichweights = "random",
+                                  num.trees = 500, 
+                                  method = "REML")
+
+summary(mf.random)
+plot(mf.random)
+VarImpPlot(mf.random)
+
+#Univariate partial dependence plot
+PartialDependence(mf.random, vars = "Subject_gender")
+PartialDependence(mf.random, vars = "Confederate_gender")
+PartialDependence(mf.random, vars = "Induction")
+PartialDependence(mf.random, vars = "Culture")
+PartialDependence(mf.random, vars = "Carpenter")
+PartialDependence(mf.random, vars = "Type_of_request")
+PartialDependence(mf.random, vars = "Immediate_or_delayed")
+PartialDependence(mf.random, vars = "Withgueguen")
+
+WeightedScatter(datasettmp, yi="yi",vars = c("Subject_gender",
+                                           "Confederate_gender",
+                                           "Induction",
+                                           "Culture",
+                                           "Carpenter",
+                                           "Type_of_request",
+                                           "Immediate_or_delayed",
+                                           "Withgueguen"))
+WeightedScatter(datasettmp, yi="Effect.size" ,vars = c("Subject_gender"))
+WeightedScatter(datasettmp, yi="Effect.size" ,vars = c("Confederate_gender"))               
+WeightedScatter(datasettmp, yi="Effect.size" ,vars = c("Induction"))
+WeightedScatter(datasettmp, yi="Effect.size" ,vars = c("Culture"))
+WeightedScatter(datasettmp, yi="Effect.size" ,vars = c("Carpenter"))
+WeightedScatter(datasettmp, yi="Effect.size" ,vars = c("Type_of_request"))
+WeightedScatter(datasettmp, yi="Effect.size" ,vars = c("Immediate_or_delayed"))
+WeightedScatter(datasettmp, yi="Effect.size" ,vars = c("Withgueguen"))
+
+```
+## Our theoretical moderators
+
+### Subject gender
+
+```{r subject gender}
+
+subgender <- rma(yi, vi, method = "REML", data = dataset, 
+                     slab = paste0(dataset$Article, "/S", dataset$Study.., "-", dataset$Sample.., "-", dataset$DV..), 
+                     ni = N,
+                     mods = ~ Subject_gender)
+subgender
+
+
+```
+
+
+#### Subject gender : Female
+
+```{r subject gender female}
+
+dataset1 <- dataset[which(dataset$Subject_gender == "F"),]
+
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+subgenderF <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+subgenderF
+
+```
+
+```{r forest subgender F, fig.width=14, fig.height=12} 
+
+forest(subgenderF, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Subject gender : Female", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, subgenderF$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, subgenderF$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, subgenderF$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+#### Subject gender : Male
+
+```{r subgender M}
+
+dataset1 <- dataset[which((dataset$Subject_gender == "M")),]
+
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+subgenderM <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+subgenderM
+
+```
+
+```{r subgender M forest, fig.width=14, fig.height=12} 
+
+forest(subgenderM, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Subject gender : Male", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, subgenderM$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, subgenderM$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, subgenderM$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+
+### Comparing the subject gender
+
+```{r comparing subject gender}
+
+comparedvtypes <- data.frame(
+    estimate = as.numeric(c(subgenderF$b, subgenderM$b)), 
+    stderror = as.numeric(c(subgenderF$se, subgenderM$se)),
+    numstudies = as.numeric(c(subgenderF$k, subgenderM$k)),
+    meta = as.character(c("Subject gender F ","Subject gender M")), 
+    tau2 = as.numeric(c(c(subgenderF$tau2, subgenderM$tau2))))
+comparedvtypes
+
+comparesubgender <- rma(estimate, sei=stderror, mods = ~ meta, method="FE", data=comparedvtypes, digits=3)
+comparesubgender
+
+```
+
+
+### Confederate Gender
+
+```{r conf gender}
+
+confgender <- rma(yi, vi, method = "REML", data = dataset, 
+                     slab = paste0(dataset$Article, "/S", dataset$Study, "-", dataset$Sample, "-", dataset$DV), 
+                     ni = N,
+                     mods = ~ Confederate_gender)
+confgender
+
+```
+
+
+#### Confederate gender : Female
+
+```{r confederate gender F}
+
+dataset1 <- dataset[which(dataset$Confederate_gender == "F"),]
+
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+confgenderF <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+confgenderF
+
+```
+
+```{r forest conf gender female, fig.width=14, fig.height=12} 
+
+forest(confgenderF, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Confederate gender : Female", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, confgenderF$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, confgenderF$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, confgenderF$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+#### Confederate gender : Male
+
+```{r confgender M}
+
+dataset1 <- dataset[which((dataset$Confederate_gender == "M")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+confgenderM <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+confgenderM
+
+```
+
+```{r confgender M forest, fig.width=14, fig.height=12} 
+
+forest(confgenderM, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Confederate gender : Male", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, confgenderM$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, confgenderM$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, confgenderM$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+
+### Comparing the Confederate gender
+
+```{r comparing confederate gender}
+
+comparedvtypes <- data.frame(
+    estimate = as.numeric(c(confgenderF$b, confgenderM$b)), 
+    stderror = as.numeric(c(confgenderF$se, confgenderM$se)),
+    numstudies = as.numeric(c(confgenderF$k, confgenderM$k)),
+    meta = as.character(c("Confederate gender F ","Confederate gender M")), 
+    tau2 = as.numeric(c(c(confgenderF$tau2, confgenderM$tau2))))
+comparedvtypes
+
+compareconfgender <- rma(estimate, sei=stderror, mods = ~ meta, method="FE", data=comparedvtypes, digits=3)
+compareconfgender
+
+```
+
+
+#### Culture : individualistic
+
+```{r individualistic}
+
+dataset1 <- dataset[which((dataset$Culture == "Individualistic")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+Cultindiv <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+Cultindiv
+
+```
+
+```{r forest individualistic culture, fig.width=14, fig.height=12} 
+
+forest(Cultindiv, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Effect in individualistic culture", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, Cultindiv$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, Cultindiv$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, Cultindiv$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+
+#### Collectivistic culture
+
+```{r collectivistic}
+
+dataset1 <- dataset[which((dataset$Culture == "Collectivistic")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+Cultcoll <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+Cultcoll
+
+```
+
+```{r forest culture collectivistic, fig.width=14, fig.height=12} 
+
+forest(Cultcoll, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Effect in collectivistic culture", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, Cultcoll$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, Cultcoll$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, Cultcoll$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+
+### Comparing the effect in culture
+
+```{r comparison culture}
+
+comparedvtypes <- data.frame(
+    estimate = as.numeric(c(Cultindiv$b, Cultcoll$b)), 
+    stderror = as.numeric(c(Cultindiv$se, Cultcoll$se)),
+    numstudies = as.numeric(c(Cultindiv$k, Cultcoll$k)),
+    meta = as.character(c("Individualistic culture","Collectivistic culture")), 
+    tau2 = as.numeric(c(c(Cultindiv$tau2, Cultcoll$tau2))))
+comparedvtypes
+
+Compareculture <- rma(estimate, sei=stderror, mods = ~ meta, method="FE", data=comparedvtypes, digits=3)
+Compareculture
+
+```
+
+
+
+
+### Interactivity
+
+```{r Interactivity}
+
+
+Interactivitymod <- rma(yi, vi, method = "REML", data = dataset, 
+                     slab = paste0(dataset$Article, "/S", dataset$Study, "-", dataset$Sample, "-"),
+                     ni = N,
+                     mods = ~ Interactivity)
+Interactivitymod
+
+```
+
+
+#### moderator email
+
+```{r email}
+
+# email
+dataset1 <- dataset[which((dataset$Interactivity == "email")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(N ~ articlestudy, data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+Interactivityemail <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+Interactivityemail
+
+```
+
+
+#### moderator face-to-face
+
+```{r faf}
+
+dataset1 <- dataset[which((dataset$Interactivity == "face-to-face")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(N ~ articlestudy, data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+Interactivityface <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+Interactivityface
+
+```
+
+```{r forest faf, fig.width=14, fig.height=12} 
+
+forest(Interactivityface, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "face-to-face interactivity", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, Interactivityface$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, Interactivityface$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, Interactivityface$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+
+#### moderator phone
+
+```{r phone}
+
+dataset1 <- dataset[which((dataset$Interactivity == "Phone")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(N ~ articlestudy, data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+Interactivityphone <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+Interactivityphone
+#only two effect sizes
+
+```
+
+
+#### moderator Postal letter
+
+```{r poste}
+
+dataset1 <- dataset[which((dataset$Interactivity == "Postal letter")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(N ~ articlestudy, data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+Interactivityletter <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+Interactivityletter
+#only three effect sizes
+
+```
+
+
+#### moderator Internet
+
+```{r internet}
+
+dataset1 <- dataset[which((dataset$Interactivity == "internet")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(N ~ articlestudy, data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+Interactivityinternet <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+Interactivityinternet
+#only three effect sizes
+
+```
+
+
+#### moderator interactivity : other than face-to-face
+
+```{r other}
+
+dataset$Interactivity <- mapvalues(dataset$Interactivity, from = c("face-to-face", "email", "Postal letter", "Phone", "internet"), to = c("face-to-face", "Other", "Other","Other","Other"))
+
+dataset1 <- dataset[which((dataset$Interactivity == "Other")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(N ~ articlestudy, data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+Interactivityother <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+Interactivityother
+
+```
+
+```{r forest other interactivity, fig.width=14, fig.height=12} 
+
+forest(Interactivityother, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Interactivity : other than face-to-face", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, Interactivityother$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, Interactivityother$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, Interactivityother$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+
+#### Comparison face-to-face to other interaction
+
+```{r comparison interactivity}
+
+comparedvtypes <- data.frame(
+    estimate = as.numeric(c(Interactivityface$b, Interactivityother$b)), 
+    stderror = as.numeric(c(Interactivityface$se, Interactivityother$se)),
+    numstudies = as.numeric(c(Interactivityface$k, Interactivityother$k)),
+    meta = as.character(c("face-to-face interactivity","other interactivity")), 
+    tau2 = as.numeric(c(c(Interactivityface$tau2, Interactivityother$tau2))))
+comparedvtypes
+
+compareinteractivity <- rma(estimate, sei=stderror, mods = ~ meta, method="FE", data=comparedvtypes, digits=3)
+sum(dataset2$N)
+compareinteractivity
+
+```
+
+
+### Induction
+
+```{r induction}
+
+dataset$Induction <- mapvalues(dataset$Induction, from = c("BYAF", "feel free", "Feel free", "You are free to refuse but", "Do not feel obliged", "do as you wish"), to = c("BYAF", "Other", "Other","Other","Other", "Other"))
+
+moderatorinduction <- rma(yi, vi, method = "REML", data = dataset, 
+                     slab = paste0(dataset$Article, "/S", dataset$Study, "-", dataset$Sample, "-"),
+                     ni = N,
+                     mods = ~ Induction)
+moderatorinduction
+
+```
+
+
+#### Induction : But you are free
+
+```{r BYAF}
+
+dataset1 <- dataset[which((dataset$Induction == "BYAF")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+ModBYAF <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+ModBYAF
+
+```
+
+```{r forest BYAF, fig.width=14, fig.height=12} 
+
+forest(ModBYAF, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Induction via the 'but you are free' technique", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, ModBYAF$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, ModBYAF$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, ModBYAF$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+
+#### Induction via other techniques
+
+```{r indu other}
+
+dataset1 <- dataset[which((dataset$Induction == "Other")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+Modinduother <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+Modinduother
+
+```
+
+```{r forest indu other, fig.width=14, fig.height=12} 
+
+forest(Modinduother, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Induction moderator : other", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, Modinduother$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, Modinduother$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, Modinduother$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+
+### Comparing the type of induction
+
+```{r comparison indu}
+
+comparedvtypes <- data.frame(
+    estimate = as.numeric(c(ModBYAF$b, Modinduother$b)), 
+    stderror = as.numeric(c(ModBYAF$se, Modinduother$se)),
+    numstudies = as.numeric(c(ModBYAF$k, Modinduother$k)),
+    meta = as.character(c("Induction : But you are free","Induction : Other")), 
+    tau2 = as.numeric(c(c(ModBYAF$tau2, Modinduother$tau2))))
+comparedvtypes
+
+compareindu <- rma(estimate, sei=stderror, mods = ~ meta, method="FE", data=comparedvtypes, digits=3)
+compareindu
+
+```
+
+
+### Before and After the Carpenter Analysis
+
+```{r carpenter}
+
+Carpenter <- rma(yi, vi, method = "REML", data = dataset, 
+                     slab = paste0(dataset$Article, "/S", dataset$Study, "-", dataset$Sample),
+                     ni = N,
+                     mods = ~ Carpenter)
+Carpenter
+
+
+```
+
+
+#### Before Carpenter Analysis
+
+```{r before carpenter}
+
+dataset1 <- dataset[which((dataset$Carpenter=="0")),]
+
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+BeforeCarpenter <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+BeforeCarpenter
+
+```
+
+```{r forest before, fig.width=14, fig.height=12} 
+
+forest(BeforeCarpenter, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Meta-analysis of studies published before Carpenter (2013)", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, BeforeCarpenter$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, BeforeCarpenter$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, BeforeCarpenter$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+
+#### After Carpenter
+
+```{r after carpenter}
+
+dataset1 <- dataset[which((dataset$Carpenter=="1")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+AfterCarpenter <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+AfterCarpenter
+
+viz_sunset(AfterCarpenter, 
+           contours = TRUE,
+           true_effect = 0.13,
+           power_contours =  "continuous")
+```
+
+```{r forest after, fig.width=14, fig.height=12} 
+
+forest(AfterCarpenter, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Meta-analysis of studies after Carpenter (2013)", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, AfterCarpenter$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, AfterCarpenter$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, AfterCarpenter$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+
+
+
+### Comparing the temporality : before and after Carpenter (2013) Meta-analysis
+```{r carpenter comparison}
+
+comparedvtypes <- data.frame(
+    estimate = as.numeric(c(BeforeCarpenter$b, AfterCarpenter$b)), 
+    stderror = as.numeric(c(BeforeCarpenter$se, AfterCarpenter$se)),
+    numstudies = as.numeric(c(BeforeCarpenter$k, AfterCarpenter$k)),
+    meta = as.character(c("Before","After")), 
+    tau2 = as.numeric(c(c(BeforeCarpenter$tau2, AfterCarpenter$tau2))))
+comparedvtypes
+
+CompareCarpenter <- rma(estimate, sei=stderror, mods = ~ meta, method="FE", data=comparedvtypes, digits=3)
+CompareCarpenter
+
+```
+
+### Type of request
+
+```{r type}
+
+Type <- rma(yi, vi, method = "REML", data = dataset, 
+                     slab = paste0(dataset$Article, "/S", dataset$Study, "-", dataset$Sample),
+                     ni = N,
+                     mods = ~ Type_of_request)
+Type
+
+```
+
+
+#### Selfish
+```{r selfish}
+
+dataset1 <- dataset[which((dataset$Type_of_request=="Selfish")),]
+
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+Selfish <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+Selfish
+
+```
+
+```{r forest selfish, fig.width=14, fig.height=12} 
+
+forest(Selfish, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Forest for selfish request", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, Selfish$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, Selfish$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, Selfish$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+
+#### Prosocial
+
+```{r prosocial}
+
+dataset1 <- dataset[which((dataset$Type_of_request=="Prosocial")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+Prosocial <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+Prosocial
+
+```
+
+```{r fig.width=14, fig.height=12} 
+
+forest(Prosocial, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Forest for prosocial type of request", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, Prosocial$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, Prosocial$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, Prosocial$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+
+
+
+### Comparing type of request
+```{r comparison type}
+
+comparedvtypes <- data.frame(
+    estimate = as.numeric(c(Selfish$b, Prosocial$b)), 
+    stderror = as.numeric(c(Selfish$se, Prosocial$se)),
+    numstudies = as.numeric(c(Selfish$k, Prosocial$k)),
+    meta = as.character(c("Selfish","Prosocial")), 
+    tau2 = as.numeric(c(c(Selfish$tau2, Prosocial$tau2))))
+comparedvtypes
+
+Comparetyperequest <- rma(estimate, sei=stderror, mods = ~ meta, method="FE", data=comparedvtypes, digits=3)
+Comparetyperequest
+
+```
+
+### Immediate or delayed
+
+```{r immdelayed}
+
+Temporality <- rma(yi, vi, method = "REML", data = dataset, 
+                     slab = paste0(dataset$Article, "/S", dataset$Study, "-", dataset$Sample),
+                     ni = N,
+                     mods = ~ Immediate_or_delayed)
+Temporality
+
+```
+
+
+#### Immediate
+
+```{r immediate}
+
+dataset1 <- dataset[which((dataset$Immediate_or_delayed=="Immediate")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+Immediate <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+Immediate
+
+```
+
+```{r forest immediate, fig.width=14, fig.height=12} 
+
+forest(Immediate, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Immediate request", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, Immediate$k+2, "Author(s), Year, and Study #",pos=4, cex=1.2)
+text( 4, Immediate$k+2, "Observed [95% CI]",pos=2,cex=1.2)
+text(-2, Immediate$k+2, "Sample size", cex=1.2)
+par(op)
+
+```
+
+
+#### Delayed request
+
+```{r delayed}
+
+dataset1 <- dataset[which((dataset$Immediate_or_delayed=="Delayed")),]
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+Delayed <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+Delayed
+
+```
+
+```{r forest delayed, fig.width=14, fig.height=12} 
+
+forest(Delayed, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Delayed request", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, Delayed$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, Delayed$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, Delayed$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+
+```
+
+
+
+
+### Comparing the moderator With Gueguen
+```{r comparison gueguen}
+
+withgueguen <- rma(yi, vi, method = "REML", data = dataset, 
+                     slab = paste0(dataset$Article, "/S", dataset$Study.., "-", dataset$Sample.., "-", dataset$DV..), 
+                     ni = N,
+                     mods = ~ Withgueguen)
+withgueguen
+
+
+```
+
+
+#### With Gueguen
+
+```{r with gueguen}
+
+dataset1 <- dataset[which(dataset$Withgueguen == "Yes"),]
+
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+withgueguen <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+withgueguen
+
+```
+
+```{r forest withgueguen, subject gender F plot, fig.width=14, fig.height=12} 
+
+forest(withgueguen, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Articles made with Gueguen", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, subgenderF$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, subgenderF$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, subgenderF$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+#### Without Gueguen
+
+```{r without gueguen}
+
+dataset1 <- dataset[which((dataset$Withgueguen == "No")),]
+
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=dataset1)
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=dataset1, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=dataset1, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+dataset2 <- merge(byarticlestudy, collapsed,by="articlestudy")
+
+withoutgueguen <- rma(es, var, method = "REML", data = dataset2, slab = articlestudy)
+sum(dataset2$N)
+withoutgueguen
+
+```
+
+```{r without gueguen forest, fig.width=14, fig.height=12} 
+
+forest(withoutgueguen, alim=c(-2,3), xlim=c(-4,4), ilab=dataset2$N, ilab.xpos=-2, xlab = "Subject gender : Male", cex=1.2)
+op <- par(font=4)
+# the columns are from -2 to 2 (xlim)
+text(-4, subgenderM$k+2, "Author(s), Year, and Study #",    pos=4, cex=1.2)
+text( 4, subgenderM$k+2, "Observed [95% CI]",  pos=2, cex=1.2)
+text(-2, subgenderM$k+2, "Sample size",                  cex=1.2)
+par(op)
+
+```
+
+
+### Comparing the subject gender
+
+```{r comparing with and without gueguen}
+
+comparedvtypes <- data.frame(
+    estimate = as.numeric(c(withgueguen$b, withoutgueguen$b)), 
+    stderror = as.numeric(c(withgueguen$se, withoutgueguen$se)),
+    numstudies = as.numeric(c(withgueguen$k, withoutgueguen$k)),
+    meta = as.character(c(" With Gueguen","Without Gueguen")), 
+    tau2 = as.numeric(c(c(withgueguen$tau2, withoutgueguen$tau2))))
+comparedvtypes
+
+comparewithandwithoutgueguen <- rma(estimate, sei=stderror, mods = ~ meta, method="FE", data=comparedvtypes, digits=3)
+comparewithandwithoutgueguen
+
+
+```
+
+
+```{r }
+
+res.gender <- rma(yi, vi, method = "ML", data = dataset, 
+                     slab = paste0(dataset$Article, "/S", dataset$Study, "-", dataset$Sample, "-", dataset$DV), 
+                     ni = N,
+                     mods = ~ Confederate_gender * Subject_gender)
+res.gender
+anova(res.gender)
+
+d = 0.45
+n1 = sum(dataset$N_BYAF)
+n1
+n2=sum(dataset$N_control)
+n2
+a=((n1+n2)^2)/(n1*n2)
+
+r = d/sqrt(d^2+a)
+r
+#we compute r from d and found an effect size of 0.21
+
+```
+# Reviewer request : pet-peese with RMA
+
+```{r }
+rma(es, var, mods = ~ sqrt(var), data = totalexp) # PET
+rma(yi = es, vi = var, mods = ~ var, data = totalexp) # PEESE
+
+
+```
+# Reviewer request : Zcurve analysis
+
+```{r }
+library (zcurve)
+summary(totalexp$es)
+0.4594
+summary(totalexp$var)
+0.0572570
+
+z<-((totalexp$es-0.4594)/sqrt(0.0572570))
+
+zcurve<-zcurve(z, method="EM", bootstrap = 1000)
+summary(zcurve)
+plot(zcurve, main = "BYAF (with EM)", annotation = T, CI = T)
+
+# fit the K2 method
+fit.KD2 <- zcurve(z, method = "density")
+summary(fit.KD2, all  = T)
+plot(fit.KD2, main = "BYAF (with KD2)", annotation = T, CI = T)
+
+
+
+```
+# Editor request : Robvis
+
+```{r , width = 15, height = 25}
+
+remotes::install_github("mcguinlu/robvis")
+library(robvis)
+
+dataset1 <- subset(dataset)
+dataset1$articlestudy <- paste(dataset1$Article, "/", dataset1$Study, "/", dataset1$Sample)
+dataset1$articlestudy <- factor(dataset1$articlestudy)
+
+
+robsummary<-dataset1 %>% select (articlestudy, D1, D2, D3, D4, D5, Overall, N)
+dplyr::rename(robsummary, Weight = N)
+robsummary2<-distinct(robsummary, articlestudy, .keep_all = TRUE)
+
+rob_summary(robsummary2, tool='ROB2')
+
+# this table can then be passed into the Robvis shiny app to create the plots.
+
+ROB2lowdataset <- dataset %>% filter (Overall == "Low")
+
+ROB2lowdataset$articlestudy <- paste(ROB2lowdataset$Article, "/", ROB2lowdataset$Study, "/", ROB2lowdataset$Sample)
+ROB2lowdataset$articlestudy <- factor(ROB2lowdataset$articlestudy)
+
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=ROB2lowdataset)
+#aggregate the effect size by article
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=ROB2lowdataset, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=ROB2lowdataset, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+totalexp <- merge(byarticlestudy, collapsed,by="articlestudy")
+#two-level analysis : by author, by study
+allexpcollapsed <- rma(es, var, method = "REML", data = totalexp, slab = articlestudy)
+allexpcollapsed
+
+pdf("lowrisk.pdf")
+forest(allexpcollapsed, alim=c(-2,4), xlim=c(-8,5), ilab=totalexp$N, ilab.xpos=-2, xlab = "Effect of BYAF technique on compliance", cex=1)
+#add headlines to the forest
+text(-3.5, allexpcollapsed$k+2, "Author(s), Year, and Study #",    pos=2, cex=1)
+text( 5, allexpcollapsed$k+2, "Observed [95% CI]",  pos=2, cex=1)
+text(-2, allexpcollapsed$k+2, "Sample size",cex=1)
+op <- par(font=4)
+dev.off()
+
+
+```
+# Editor request : some concerns studies
+
+```{r }
+
+
+ROB2middledataset <- dataset %>% filter (Overall == "Low" | Overall =="Some concerns")
+
+ROB2middledataset$articlestudy <- paste(ROB2middledataset$Article, "/", ROB2middledataset$Study, "/", ROB2middledataset$Sample)
+ROB2middledataset$articlestudy <- factor(ROB2middledataset$articlestudy)
+
+collapsed <- agg(id=articlestudy, es=yi, var=vi, cor=.5,
+                 method="BHHR", mod=NULL, data=ROB2middledataset)
+#aggregate the effect size by article
+byarticlestudy <- 
+  cbind(
+    aggregate(
+      yi ~ articlestudy, 
+      data=ROB2middledataset, 
+      FUN=function(x) c(mean=mean(x), sd=sd(x), min=min(x), max=max(x), count=length(x))),
+    aggregate(
+      N ~ articlestudy, 
+      data=ROB2middledataset, FUN = max)[2]
+  )
+names(collapsed)[names(collapsed) == 'id'] <- 'articlestudy'
+totalexp <- merge(byarticlestudy, collapsed,by="articlestudy")
+#two-level analysis : by author, by study
+allexpcollapsed <- rma(es, var, method = "REML", data = totalexp, slab = articlestudy)
+allexpcollapsed
+
+forest(allexpcollapsed, alim=c(-2,4), xlim=c(-8,5), ilab=totalexp$N, ilab.xpos=-2, xlab = "Effect of BYAF technique on compliance", cex=1.2)
+#add headlines to the forest
+op <- par(font=4)
+text(-4, allexpcollapsed$k+2, "Author(s), Year, and Study #",    pos=2, cex=1.2)
+text( 5, allexpcollapsed$k+2, "Observed [95% CI]",  pos=1, cex=1.2)
+text(-2, allexpcollapsed$k+2, "Sample size",cex=1.2)
+par(op)
+
+
+```
+# Editor request : statcheck
+
+```{r }
+
+library(statcheck)
+
+text <- as.character("X(1) = 6,83 ; p = 0.009, X(1) = 138 ; p = 0.0007, X(1) = 1.05, p = .306, X(1)= 4,54, p =.03, X(1)= 190, p < .001, X(1)= 5,24, p = .02, X(1) = 13.73, p <.001, X(1) = 6.05, P < .02, X(1)= 47,6 P < .001, X(1) = 2.56, p = .11, X(1) = 6.82, p =.009, X(1)= 7.85, p = .005, X(1) = 9,93, p = .002, X(1)= 0.35, p= .553, X(1)= 0.76, p = .385, X(1)= 9.60, p < .001, X(1)= 3.06, p = .08, X(1)= 0,23, p = .63, X(1)= 3.72, p = .05, X(1)= 3,78, p < .05, X(1)= 2,90, p > .09, X(1) = 4.88, p < .03, X(1) = 6.13, p < .02, X(1) = 0.79,X(120) = 4.73, p < .03, X(1) = 5.9 p < .02, X(1) = 1.26, p > .26, X(1)= 5,50, p <.02, X(1)= 0,1 p =.74, X(1)= -1.39, p = .238, X(1)= 2,69, p = .10")
+
+
+check<-statcheck(text)
+plot(check)
+
+
+```
+
+ ``` 
