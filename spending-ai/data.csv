@@ -1,0 +1,5 @@
+provider,platform,download,spending
+openai,apple,22000000,62000000
+openai,android,40000000,12000000
+anthropic,apple,400000,900000
+anthropic,android,600000,400000
